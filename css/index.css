@@ -1,0 +1,93 @@
+.navbar {
+    margin-bottom: 0;
+}
+
+#userRow
+{
+	background-color: #374341;
+	color: white;
+	zoom: 1;
+	filter: alpha(opacity=90);
+	opacity: 0.9;
+	display: none;
+}
+
+#userBanner
+{
+	display: inline-block;
+}
+
+#firstRow
+{
+	background-color: #12200E;
+	color: white;
+	opacity: .8;
+	padding: 5em 0 10em 0;
+}
+
+#secondRow
+{
+	background-color: #BEC1C2;
+	color: white;
+	opacity: .8;
+	padding: 2em 0;
+}
+
+#thirdRow
+{
+	background-color: #091739;
+	height: 20em;
+	color: white;
+	opacity: .8;
+}
+
+.thumbnail
+{
+	padding:2px;
+}
+
+.thumbnail > img
+{
+	width: 100%;
+}
+
+#home_search
+{
+	width: 100%;
+	border-radius: .1em;
+	border:0;
+	color:black;
+	font-size:3em;
+	outline: none;
+	padding: .15em;
+	height: 100%;
+}
+
+#home_search_label
+{
+	font-size:3em;
+	color: black;
+	margin-right: .1em;
+}
+
+#mainSearchButton
+{
+	font-size:3em;
+	width: 5.5em;
+	height: 100%;
+}
+
+.jumbotron
+{
+	background-color: #1f2423;
+}
+
+#jumboButton
+{
+	font-size: 1.7em;
+}
+
+a:active,
+a:hover {
+  color: #337ab7;
+}

@@ -1,0 +1,106 @@
+body
+{
+	background-color: #E0E0E0;
+    padding-bottom: 5em; 
+}
+.entireWidth
+{
+	width:100%;
+}
+
+.reducedPadding
+{
+	padding:.7em;
+}
+
+.center-block
+{
+	float:none;
+}
+
+.border
+{
+	border: 1px solid black;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.navbar-default .navbar-nav > .navHighlight > a {
+    color: white;
+    background-color: #091739;
+    opacity: .9;
+}
+
+.navbar-default .navbar-nav > .navHighlight > a:hover, 
+.navbar-default .navbar-nav > .navHighlight > a:focus
+{
+    color: grey;
+    background-color: #091739;
+}
+
+.coolButton,.coolButton:hover, .coolButton:focus
+{
+    background-color: #1f2423;
+}
+
+.coolButton:hover, .coolButton:focus
+{
+    border-color: #73E83B;
+}
+
+.neon
+{
+    color: #73E83B;
+}
+
+.sBlue
+{
+    color: #337ab7;
+}
+
+.sBlueBorder
+{
+    border:1px solid #337ab7;
+}
+
+.neonBorder
+{
+    border:1px solid #73E83B;
+}
+
+.absolute
+{
+    position: absolute;
+}
+
+.relative
+{
+    position: relative;
+}
+
+.cursorPointer
+{
+    cursor: pointer;
+}
+
+.hideObj
+{
+    display:none;
+}
+
+.z-important
+{
+    z-index: 999999 !important;
+}
+
+.noPadding
+{
+    padding:0;
+}
