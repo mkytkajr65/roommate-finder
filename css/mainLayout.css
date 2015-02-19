@@ -1,11 +1,15 @@
 body
 {
-	background-color: #E0E0E0;
-    padding-bottom: 5em; 
+	background-color: #EFEFEF;
 }
 .entireWidth
 {
 	width:100%;
+}
+
+.pushContainer
+{
+    height: 5em;
 }
 
 .reducedPadding
@@ -30,29 +34,6 @@ body
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
-
-.navbar-default .navbar-nav > .navHighlight > a {
-    color: white;
-    background-color: #091739;
-    opacity: .9;
-}
-
-.navbar-default .navbar-nav > .navHighlight > a:hover, 
-.navbar-default .navbar-nav > .navHighlight > a:focus
-{
-    color: grey;
-    background-color: #091739;
-}
-
-.coolButton,.coolButton:hover, .coolButton:focus
-{
-    background-color: #1f2423;
-}
-
-.coolButton:hover, .coolButton:focus
-{
-    border-color: #73E83B;
 }
 
 .neon

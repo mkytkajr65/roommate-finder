@@ -1,0 +1,18 @@
+#off-canvas-menu
+{
+	background-color: #822433;
+	color: #fff;
+	width: 15em;
+	display: none;
+	float: left;
+	height: 100%;
+	position: absolute;
+	padding-top: 4em;
+	z-index: 10;
+	opacity: .8;
+}
+
+#off-canvas-menu > div
+{
+	display: none;
+}

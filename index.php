@@ -13,6 +13,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/mainLayout.css" rel="stylesheet">
     <link href="css/navbar.css" rel="stylesheet">
+    <link href="css/off-canvas-nav.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -29,19 +30,21 @@
           error_reporting(-1);
       */
       include("navbar.php");
-      include("off-canvas-nav.php");
     ?>
-     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          
+    <?php include("off-canvas-nav.php"); ?>
+      <div class="pushContainer"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 center-block">
+            
+          </div>
         </div>
       </div>
-    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/off-canvas-slide.js"></script>
   </body>
 </html>
