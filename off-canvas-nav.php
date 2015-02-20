@@ -1,15 +1,28 @@
 <div id="off-canvas-menu">
-	<div class="container-fluid border">
+	<div class="container-fluid">
 		<div class="row">
-			<nav class="col-md-12 border">
-				<ul>
-					<li>Menu 1</li>
-					<li>Menu 2</li>
-					<li>Menu 3</li>
-					<li>Menu 4</li>
-					<li>Menu 5</li>
-				</ul>
-			</nav>
+			<div class="col-md-12 center-block">
+				<div class="row">
+					<div class="col-md-12">
+						<h2 class="text-center">Settings</h2>
+						<p id="position">no movement</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<label>Setting 1</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="offCanvasSliderBar">
+							<div class="offCanvasSlider">
+								<div class="bar"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
