@@ -14,6 +14,7 @@
     <link href="css/mainLayout.css" rel="stylesheet">
     <link href="css/navbar.css" rel="stylesheet">
     <link href="css/off-canvas-nav.css" rel="stylesheet">
+    <link href="css/slider.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,7 +37,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-10 center-block">
-            
+
           </div>
         </div>
       </div>
@@ -45,6 +46,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-slider.js"></script>
     <script src="js/off-canvas-slide.js"></script>
   </body>
 </html>
