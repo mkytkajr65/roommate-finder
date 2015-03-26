@@ -1,0 +1,28 @@
+
+#questionTabPanel
+{
+	border: 2px solid black;
+	height: 40em;
+	padding: 2em;
+	overflow: scroll;
+}
+
+.studentQuestion
+{
+	margin-top: 2em;
+}
+
+.answerInput
+{
+	margin-top: 1em;
+}
+
+#answersSubmit
+{
+	width: 100%;
+}
+
+#saveArea
+{
+	padding: 2em 0;
+}
