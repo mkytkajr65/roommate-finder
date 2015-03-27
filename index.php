@@ -168,8 +168,132 @@
                         </div>
                         <div role="tabpanel" class="tab-pane" id="studying">studying</div>
                         <div role="tabpanel" class="tab-pane" id="room">room</div>
-                        <div role="tabpanel" class="tab-pane" id="personal">personal</div>
-                        <div role="tabpanel" class="tab-pane" id="lifestyle">lifestyle</div>
+                        <div role="tabpanel" class="tab-pane" id="personal">
+                          <form method="post" action="">
+                            <div class="row studentQuestion">
+                              <div class="col-md-12">
+                                <ol>
+                                  <li><h4>How often do you need alone time?</h4>
+                                      <div class="container-fluid">
+                                        <div class="col-md-12 answerInput">
+                                              <div class="form-group">
+                                                <select class="form-control" id="sel1">
+                                                  <option>Often</option>
+                                                  <option>Sometimes</option>
+                                                  <option>Rarely</option>
+                                                  <option>Never</option>
+                                                </select>
+                                              </div>
+                                        </div>
+                                      </div>
+                                  </li>
+                                  <li><h4>How comfortable are you with sharing your belongings?</h4>
+                                      <div class="container-fluid">
+                                        <div class="col-md-12 answerInput">
+                                              <div class="form-group">
+                                                <label for="sel1">I am:</label>
+                                                <select class="form-control" id="sel1">
+                                                  <option>not comfortable sharing my belongings</option>
+                                                  <option>willing to share most things if asked first.</option>
+                                                  <option>willing to share anything without restrictions.</option>
+                                                </select>
+                                              </div>
+                                        </div>
+                                      </div>
+                                  </li>
+                                  <li><h4>How do you react when something is bothering you?</h4>
+                                      <div class="container-fluid">
+                                        <div class="col-md-12 answerInput">
+                                              <div class="form-group">
+                                                <select class="form-control" id="sel1">
+                                                  <option>I like to talk about it.</option>
+                                                  <option>I tend to become quiet and withdrawn.</option>
+                                                </select>
+                                              </div>
+                                        </div>
+                                      </div>
+                                  </li>
+                                </ol>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="lifestyle">
+                          <form method="post" action="">
+                            <div class="row studentQuestion">
+                              <div class="col-md-12">
+                                <ol>
+                                  <li><h4>I prefer a roommate with:</h4>
+                                      <div class="container-fluid">
+                                        <div class="col-md-12 answerInput">
+                                              <div class="form-group">
+                                                <select class="form-control" id="sel1">
+                                                  <option>an active lifestyle</option>
+                                                  <option>a quiet lifestyle</option>
+                                                </select>
+                                              </div>
+                                        </div>
+                                      </div>
+                                  </li>
+                                  <li><h4>My music tastes: (check all that apply)</h4>
+                                      <div class="container-fluid">
+                                        <div class="col-md-12 answerInput">
+                                              <div class="form-group">
+                                                <label for="sel1">I like:</label>
+                                                <div class="form-group">
+                                                  <input type="checkbox"> Alternative
+                                                  <input type="checkbox"> Christian
+                                                  <input type="checkbox"> Classical
+                                                  <input type="checkbox"> Country
+                                                  <input type="checkbox"> Hard/Metal
+                                                  <input type="checkbox"> Rock
+                                                  <input type="checkbox"> Soft Rock/Pop
+                                                </div>
+                                              </div>
+                                        </div>
+                                      </div>
+                                  </li>
+                                  <div class="container-fluid" style="color:red">(next two current students only) </div>
+                                  <li><h4>Do you currently have a roommate?</h4>
+                                      <div class="container-fluid">
+                                        <div class="col-md-12 answerInput">
+                                          <div class="col-md-6">
+                                              <div class="onoffswitch">
+                                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="Q2">
+                                                <label class="onoffswitch-label" for="Q2">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                              </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                  </li>
+                                  <li><h4>Are you willing to consider moving from your current room?</h4>
+                                      <div class="container-fluid">
+                                        <div class="col-md-12 answerInput">
+                                          <div class="col-md-6">
+                                              <div class="onoffswitch">
+                                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="Q2">
+                                                <label class="onoffswitch-label" for="Q2">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                              </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                  </li>
+                                  <li><h4>Please read and check the box below.</h4>
+                                    <div class="container-fluid">
+                                    <input type="checkbox"><strong> I have answered all the questions to the best of my ability. Please share my responses with Student Life & Learning.</strong>
+                                    </div>
+                                </li>
+                                </ol>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
                     </div>
 
                   </div>
