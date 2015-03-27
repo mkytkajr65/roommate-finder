@@ -103,8 +103,8 @@
                                         <div class="col-md-12 answerInput">
                                           <div class="col-md-6">
                                               <div class="onoffswitch">
-                                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="Q2">
-                                                <label class="onoffswitch-label" for="Q2">
+                                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="Q3">
+                                                <label class="onoffswitch-label" for="Q3">
                                                     <span class="onoffswitch-inner"></span>
                                                     <span class="onoffswitch-switch"></span>
                                                 </label>
@@ -161,13 +161,190 @@
                                         </div>
                                       </div>
                                   </li>
+                                  <li><h4>Do you prefer to Sleep with the lights on?</h4>
+                                      <div class="container-fluid">
+                                        <div class="col-md-12 answerInput">
+                                          <div class="col-md-6">
+                                              <div class="onoffswitch">
+                                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="Q5">
+                                                <label class="onoffswitch-label" for="Q5">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                              </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <div class="row">
+                                              <div class="col-md-7 col-md-offset-1">
+                                                <label>Preference Rating</label>
+                                              </div>
+                                              <div class="sliderValue" class="col-md-2">55</div>
+                                            </div>
+                                            <input class="preferenceSlider" type="range" value="0"  min="0" max="10" />
+                                          </div>
+                                        </div>
+                                      </div>
+                                  </li>	
+								  <li><h4>I plan on going to sleep at: </h4>
+                                      <div class="container-fluid">
+                                        <div class="col-md-12 answerInput">
+                                              <div class="form-group">
+                                                <label for="sel1">Bedtime:</label>
+                                                <select class="form-control" id="sel2">
+                                                  <option>Before 10 PM</option>
+                                                  <option>10 PM</option>
+                                                  <option>11 PM</option>
+												  <option>12 AM</option>
+												  <option>1 AM</option>
+												  <option>After 1 AM</option>
+                                                </select>
+                                              </div>
+                                        </div>
+                                      </div>
+                                  </li>
+								  <li><h4>I plan on waking up at: </h4>
+                                      <div class="container-fluid">
+                                        <div class="col-md-12 answerInput">
+                                              <div class="form-group">
+                                                <label for="sel1">Rise Time:</label>
+                                                <select class="form-control" id="sel3">
+                                                  <option>Before 6 AM</option>
+                                                  <option>7 AM</option>
+                                                  <option>8 AM</option>
+												  <option>9 AM</option>
+												  <option>10 AM</option>
+												  <option>After 10 AM</option>
+                                                </select>
+                                              </div>
+                                        </div>
+                                      </div>
+                                  </li>
                                 </ol>
                               </div>
                             </div>
                           </form>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="studying">studying</div>
-                        <div role="tabpanel" class="tab-pane" id="room">room</div>
+                        <div role="tabpanel" class="tab-pane" id="studying">
+                          <form method="post" action="">
+                            <div class="row studentQuestion">
+                              <div class="col-md-12">
+                                <ol>
+                                  <li><h4>Do you prefer to study in your room?</h4>
+                                      <div class="container-fluid">
+                                        <div class="col-md-12 answerInput">
+                                          <div class="col-md-6">
+                                              <div class="onoffswitch">
+                                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="Q8">
+                                                <label class="onoffswitch-label" for="Q8">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                              </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <div class="row">
+                                              <div class="col-md-7 col-md-offset-1">
+                                                <label>Preference Rating</label>
+                                              </div>
+                                              <div class="sliderValue" class="col-md-2">55</div>
+                                            </div>
+                                            <input class="preferenceSlider" type="range" value="0"  min="0" max="10" />
+                                          </div>
+                                        </div>
+                                      </div>									  
+                                  </li>
+								  <li><h4>I Prefer to study: </h4>
+                                      <div class="container-fluid">
+                                        <div class="col-md-12 answerInput">
+                                              <div class="form-group">
+                                                <select class="form-control" id="sel4">
+                                                  <option>During the Day</option>
+                                                  <option>In the Evening</option>
+												  <option>Late at Night</option>
+                                                </select>
+                                              </div>
+                                        </div>
+                                      </div>
+                                  </li>								  
+                                  <li><h4>Do you need absolute quiet when you study?</h4>
+                                      <div class="container-fluid">
+                                        <div class="col-md-12 answerInput">
+                                          <div class="col-md-6">
+                                              <div class="onoffswitch">
+                                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="Q10">
+                                                <label class="onoffswitch-label" for="Q10">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                              </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <div class="row">
+                                              <div class="col-md-7 col-md-offset-1">
+                                                <label>Preference Rating</label>
+                                              </div>
+                                              <div class="sliderValue" class="col-md-2">55</div>
+                                            </div>
+                                            <input class="preferenceSlider" type="range" value="0"  min="0" max="10" />
+                                          </div>
+                                        </div>
+                                      </div>
+                                  </li>								  
+                                </ol>
+                              </div>
+                            </div>
+                          </form>
+                        </div>										
+                        <div role="tabpanel" class="tab-pane" id="room">room
+                          <form method="post" action="">
+                            <div class="row studentQuestion">
+                              <div class="col-md-12">
+                                <ol>                                  
+								  <li><h4>I Prefer my room: </h4>
+                                      <div class="container-fluid">
+                                        <div class="col-md-12 answerInput">
+                                              <div class="form-group">
+                                                <select class="form-control" id="sel5">
+                                                  <option>Warmer</option>
+                                                  <option>Colder</option>
+                                                </select>
+                                              </div>
+                                        </div>
+                                      </div>
+                                  </li>
+								  <li><h4>I tend to keep my room and belongings: </h4>
+                                      <div class="container-fluid">
+                                        <div class="col-md-12 answerInput">
+                                              <div class="form-group">
+                                                <select class="form-control" id="sel6">
+                                                  <option>Always neat and organized</option>
+                                                  <option>Neat most of the time</option>
+												  <option>Cluttered most of the time</option>
+												  <option>Always messy and disorganized</option>
+                                                </select>
+                                              </div>
+                                        </div>
+                                      </div>
+                                  </li>								  
+								  <li><h4>Cable TV: </h4>
+                                      <div class="container-fluid">
+                                        <div class="col-md-12 answerInput">
+                                              <div class="form-group">                                                
+                                                <select class="form-control" id="sel7">
+                                                  <option>I want TV in my room</option>
+                                                  <option>I don't want TV in my room</option>
+												  <option>No Preference, and not interested in splitting the cost</option>
+												  <option>No Preference, but willing to split the cost</option>
+                                                </select>
+                                              </div>
+                                        </div>
+                                      </div>
+                                  </li>                                  					 
+                                </ol>
+                              </div>
+                            </div>
+                          </form>
+                        </div>						
                         <div role="tabpanel" class="tab-pane" id="personal">
                           <form method="post" action="">
                             <div class="row studentQuestion">
@@ -177,7 +354,7 @@
                                       <div class="container-fluid">
                                         <div class="col-md-12 answerInput">
                                               <div class="form-group">
-                                                <select class="form-control" id="sel1">
+                                                <select class="form-control" id="sel12">
                                                   <option>Often</option>
                                                   <option>Sometimes</option>
                                                   <option>Rarely</option>
@@ -192,7 +369,7 @@
                                         <div class="col-md-12 answerInput">
                                               <div class="form-group">
                                                 <label for="sel1">I am:</label>
-                                                <select class="form-control" id="sel1">
+                                                <select class="form-control" id="sel9">
                                                   <option>not comfortable sharing my belongings</option>
                                                   <option>willing to share most things if asked first.</option>
                                                   <option>willing to share anything without restrictions.</option>
@@ -205,7 +382,7 @@
                                       <div class="container-fluid">
                                         <div class="col-md-12 answerInput">
                                               <div class="form-group">
-                                                <select class="form-control" id="sel1">
+                                                <select class="form-control" id="sel10">
                                                   <option>I like to talk about it.</option>
                                                   <option>I tend to become quiet and withdrawn.</option>
                                                 </select>
@@ -259,8 +436,8 @@
                                         <div class="col-md-12 answerInput">
                                           <div class="col-md-6">
                                               <div class="onoffswitch">
-                                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="Q2">
-                                                <label class="onoffswitch-label" for="Q2">
+                                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="Q19">
+                                                <label class="onoffswitch-label" for="Q19">
                                                     <span class="onoffswitch-inner"></span>
                                                     <span class="onoffswitch-switch"></span>
                                                 </label>
@@ -274,8 +451,8 @@
                                         <div class="col-md-12 answerInput">
                                           <div class="col-md-6">
                                               <div class="onoffswitch">
-                                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="Q2">
-                                                <label class="onoffswitch-label" for="Q2">
+                                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="Q20">
+                                                <label class="onoffswitch-label" for="Q20">
                                                     <span class="onoffswitch-inner"></span>
                                                     <span class="onoffswitch-switch"></span>
                                                 </label>
