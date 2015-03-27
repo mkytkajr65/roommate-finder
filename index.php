@@ -14,7 +14,6 @@
     <link href="css/mainLayout.css" rel="stylesheet">
     <link href="css/navbar.css" rel="stylesheet">
     <link href="css/off-canvas-nav.css" rel="stylesheet">
-    <link href="css/slider.css" rel="stylesheet">
     <link href="css/homePage.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -43,7 +42,7 @@
                   <div id="questionTabPanel" role="tabpanel">
 
                     <!-- Nav tabs -->
-                    <ul class="nav nav-tabs" role="tablist">
+                    <ul id="questionTypeNav" class="nav nav-tabs" role="tablist">
                       <li role="presentation" class="active"><a href="#basics" aria-controls="basics" role="tab" data-toggle="tab">Basics</a></li>
                       <li role="presentation"><a href="#sleeping" aria-controls="profile" role="tab" data-toggle="tab">Sleeping</a></li>
                       <li role="presentation"><a href="#studying" aria-controls="studying" role="tab" data-toggle="tab">Studying</a></li>
@@ -62,7 +61,7 @@
                                   <li><h4>Do you have a medical condition which would necessitate a special housing assignment?</h4>
                                       <div class="container-fluid">
                                         <div class="col-md-12 answerInput">
-                                          <div class="col-md-6">
+                                          <div class="col-md-5">
                                               <div class="onoffswitch">
                                                 <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="Q1">
                                                 <label class="onoffswitch-label" for="Q1">
@@ -71,14 +70,14 @@
                                                 </label>
                                               </div>
                                           </div>
-                                          <div class="col-md-6">
+                                          <div class="col-md-7">
                                             <div class="row">
                                               <div class="col-md-7 col-md-offset-1">
                                                 <label>Preference Rating</label>
                                               </div>
-                                              <div class="sliderValue" class="col-md-2">55</div>
+                                              <div class="sliderValue" class="col-md-4"></div>
                                             </div>
-                                            <input class="preferenceSlider" type="range" value="0"  min="0" max="10" />
+                                            <input class="preferenceSlider" type="range" value="1"  min="1" max="5" />
                                           </div>
                                         </div>
                                       </div>
@@ -116,23 +115,23 @@
                                   <li><h4>Can you live with someone who smokes?</h4>
                                       <div class="container-fluid">
                                         <div class="col-md-12 answerInput">
-                                          <div class="col-md-6">
+                                          <div class="col-md-5">
                                               <div class="onoffswitch">
-                                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="Q3">
-                                                <label class="onoffswitch-label" for="Q3">
+                                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="Q4">
+                                                <label class="onoffswitch-label" for="Q4">
                                                     <span class="onoffswitch-inner"></span>
                                                     <span class="onoffswitch-switch"></span>
                                                 </label>
                                               </div>
                                           </div>
-                                          <div class="col-md-6">
+                                          <div class="col-md-7">
                                             <div class="row">
                                               <div class="col-md-7 col-md-offset-1">
                                                 <label>Preference Rating</label>
                                               </div>
-                                              <div class="sliderValue" class="col-md-2">55</div>
+                                              <div class="sliderValue" class="col-md-4"></div>
                                             </div>
-                                            <input class="preferenceSlider" type="range" value="0"  min="0" max="10" />
+                                            <input class="preferenceSlider" type="range" value="1"  min="1" max="5" />
                                           </div>
                                         </div>
                                       </div>
@@ -164,7 +163,7 @@
                                   <li><h4>Do you prefer to Sleep with the lights on?</h4>
                                       <div class="container-fluid">
                                         <div class="col-md-12 answerInput">
-                                          <div class="col-md-6">
+                                          <div class="col-md-5">
                                               <div class="onoffswitch">
                                                 <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="Q5">
                                                 <label class="onoffswitch-label" for="Q5">
@@ -173,14 +172,14 @@
                                                 </label>
                                               </div>
                                           </div>
-                                          <div class="col-md-6">
+                                          <div class="col-md-7">
                                             <div class="row">
                                               <div class="col-md-7 col-md-offset-1">
                                                 <label>Preference Rating</label>
                                               </div>
-                                              <div class="sliderValue" class="col-md-2">55</div>
+                                              <div class="sliderValue" class="col-md-4">0</div>
                                             </div>
-                                            <input class="preferenceSlider" type="range" value="0"  min="0" max="10" />
+                                            <input class="preferenceSlider" type="range" value="1"  min="1" max="5" />
                                           </div>
                                         </div>
                                       </div>
@@ -232,7 +231,7 @@
                                   <li><h4>Do you prefer to study in your room?</h4>
                                       <div class="container-fluid">
                                         <div class="col-md-12 answerInput">
-                                          <div class="col-md-6">
+                                          <div class="col-md-5">
                                               <div class="onoffswitch">
                                                 <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="Q8">
                                                 <label class="onoffswitch-label" for="Q8">
@@ -241,14 +240,14 @@
                                                 </label>
                                               </div>
                                           </div>
-                                          <div class="col-md-6">
+                                          <div class="col-md-7">
                                             <div class="row">
                                               <div class="col-md-7 col-md-offset-1">
                                                 <label>Preference Rating</label>
                                               </div>
-                                              <div class="sliderValue" class="col-md-2">55</div>
+                                              <div class="sliderValue" class="col-md-4"></div>
                                             </div>
-                                            <input class="preferenceSlider" type="range" value="0"  min="0" max="10" />
+                                            <input class="preferenceSlider" type="range" value="1"  min="1" max="5" />
                                           </div>
                                         </div>
                                       </div>									  
@@ -269,7 +268,7 @@
                                   <li><h4>Do you need absolute quiet when you study?</h4>
                                       <div class="container-fluid">
                                         <div class="col-md-12 answerInput">
-                                          <div class="col-md-6">
+                                          <div class="col-md-5">
                                               <div class="onoffswitch">
                                                 <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="Q10">
                                                 <label class="onoffswitch-label" for="Q10">
@@ -278,14 +277,22 @@
                                                 </label>
                                               </div>
                                           </div>
-                                          <div class="col-md-6">
+                                          <div class="col-md-7">
                                             <div class="row">
                                               <div class="col-md-7 col-md-offset-1">
                                                 <label>Preference Rating</label>
                                               </div>
-                                              <div class="sliderValue" class="col-md-2">55</div>
+                                              <div class="sliderValue" class="col-md-4"></div>
                                             </div>
-                                            <input class="preferenceSlider" type="range" value="0"  min="0" max="10" />
+                                            <input class="preferenceSlider" type="range" value="1"  min="1" max="5" />
+                                          </div><div class="col-md-6">
+                                            <div class="row">
+                                              <div class="col-md-7 col-md-offset-1">
+                                                <label>Preference Rating</label>
+                                              </div>
+                                              <div class="sliderValue" class="col-md-2"></div>
+                                            </div>
+                                            <input class="preferenceSlider" type="range" value="1"  min="1" max="5" />
                                           </div>
                                         </div>
                                       </div>
@@ -295,7 +302,7 @@
                             </div>
                           </form>
                         </div>										
-                        <div role="tabpanel" class="tab-pane" id="room">room
+                        <div role="tabpanel" class="tab-pane" id="room">
                           <form method="post" action="">
                             <div class="row studentQuestion">
                               <div class="col-md-12">
@@ -423,6 +430,7 @@
                                                   <input type="checkbox"> Classical
                                                   <input type="checkbox"> Country
                                                   <input type="checkbox"> Hard/Metal
+                                                  <input type="checkbox"> Rap/Hip-Hop
                                                   <input type="checkbox"> Rock
                                                   <input type="checkbox"> Soft Rock/Pop
                                                 </div>
@@ -482,7 +490,7 @@
               <div class="col-md-8 center-block" id="saveArea">
                 <div class="row">
                   <div class="col-md-4 center-block">
-                    <button id="answersSubmit" class="btn btn-primary">Save</button>
+                    <button id="answersSubmitButton">Save</button>
                   </div>
                 </div>
               </div>
@@ -493,7 +501,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap-slider.js"></script>
     <script src="js/off-canvas-slide.js"></script>
+    <script src="js/preferenceSlider.js"></script>
   </body>
 </html>

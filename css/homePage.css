@@ -1,28 +1,73 @@
 
 #questionTabPanel
 {
-	border: 2px solid black;
+	
 	height: 40em;
 	padding: 2em;
 	overflow: scroll;
+	border-radius: 5px;
+	background-color: white;
+}
+
+#questionTypeNav.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+     zoom:1; /* hasLayout ie7 trigger */
+}
+
+#questionTypeNav.nav-tabs, .nav-pills {
+    text-align:center;
+}
+
+#questionTypeNav
+{
+	background-color: #D2D4D6;
+	padding-top:.5em;
+	border-radius: 3px;
 }
 
 .studentQuestion
 {
 	margin-top: 2em;
-}
+}		
 
 .answerInput
 {
 	margin-top: 1em;
 }
 
-#answersSubmit
+#answersSubmitButton
 {
 	width: 100%;
+	color: white;
+	padding: 0;
+	height: 3em;
+	border-radius: 3px;
+	background-color:#454545;
+	border: 0;
+}
+
+#answersSubmitButton:hover
+{
+	background-color: grey;
 }
 
 #saveArea
 {
-	padding: 2em 0;
+	padding: 1em 0;
+}
+
+/* tab color */
+#questionTypeNav.nav-tabs>li>a {
+  background-color: #333333; 
+  border-color: #777777;
+  color:#fff;
+}
+
+/* active tab color */
+#questionTypeNav.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+  color: #fff;
+  background-color: #822433;
+  border: 1px solid #888888;
 }
