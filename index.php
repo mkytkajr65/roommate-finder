@@ -10,10 +10,11 @@
     <title>Roommate Finder</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/mainLayout.css" rel="stylesheet">
-    <link href="css/navbar.css" rel="stylesheet">
-    <link href="css/off-canvas-nav.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet"><!--Required for all pages-->
+    <link href="css/mainLayout.css" rel="stylesheet"><!--Required for all pages-->
+    <link href="css/navbar.css" rel="stylesheet"><!--Required for all pages-->
+    <link href="css/circle.css" rel="stylesheet"><!--Required for all pages-->
+    <link href="css/off-canvas-nav.css" rel="stylesheet"><!--Required for all pages-->
     <link href="css/homePage.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -42,7 +43,7 @@
                   <div id="questionTabPanel" role="tabpanel">
 
                     <!-- Nav tabs -->
-                    <ul id="questionTypeNav" class="nav nav-tabs" role="tablist">
+                    <ul id="questionTypeNav" class="nav nav-tabs noselect" role="tablist">
                       <li role="presentation" class="active"><a href="#basics" aria-controls="basics" role="tab" data-toggle="tab">Basics</a></li>
                       <li role="presentation"><a href="#sleeping" aria-controls="profile" role="tab" data-toggle="tab">Sleeping</a></li>
                       <li role="presentation"><a href="#studying" aria-controls="studying" role="tab" data-toggle="tab">Studying</a></li>

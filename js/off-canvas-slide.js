@@ -5,9 +5,18 @@ toggleSpan.click(function(){
     $("#off-canvas-menu > div").toggle();
 });
 
-$("#myonoffswitch").click(function(){
-    if($(this).prop("checked") == true)
-    {
-        
-    }
+
+$(document).ready(function(){
+	var textlength;
+	$(".smallRankingWidget").each(function(){
+		textlength = $(this).find(".name").text().length;
+		console.log(textlength);
+		if(textlength < 12) {
+		   // Do noting 
+		  } else if (textlength < 15) {
+		      $(this).find(".name").css('font-size', '98%');
+		  } else if (textlength > 15) {
+		      $(this).find(".name").css('font-size', '90%');
+		  }
+	});
 });
