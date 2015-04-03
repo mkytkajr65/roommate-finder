@@ -1,0 +1,26 @@
+#matchArea
+{
+	background-color: #B2B2B2;
+	padding: 3em 2em;
+	border-radius: 2px;
+}
+
+.largeRankingWidget
+{
+	background-color: white;
+	border-radius: 5px;
+	padding:1em;
+}
+
+.profilePic
+{
+	height: 8em;
+	background-image: url("../images/default.jpg");
+	background-size:cover;
+	background-position:-2em 0em;
+}
+
+.topBannerForWidget
+{
+    background-color: #484848;
+}

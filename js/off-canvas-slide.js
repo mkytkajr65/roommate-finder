@@ -14,9 +14,9 @@ $(document).ready(function(){
 		if(textlength < 12) {
 		   // Do noting 
 		  } else if (textlength < 15) {
-		      $(this).find(".name").css('font-size', '98%');
+		      $(this).find(".name").css('font-size', '1.4em');
 		  } else if (textlength > 15) {
-		      $(this).find(".name").css('font-size', '90%');
+		      $(this).find(".name").css('font-size', '1.3em');
 		  }
 	});
 });

@@ -2,9 +2,32 @@ body
 {
 	background-color: #EFEFEF;
 }
+
+html, body
+{
+    padding-bottom: 4em;
+}
+
 .entireWidth
 {
 	width:100%;
+}
+
+.centerElement
+{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.spacing2
+{
+    margin-top: 2em;
+}
+
+.spacingHalf
+{
+    margin-top: .5em;
 }
 
 .pushContainer
@@ -84,6 +107,16 @@ body
 .noPadding
 {
     padding:0;
+}
+
+.paddingHalf
+{
+    padding: .5em;
+}
+
+.paddingTop1
+{
+    padding-top: 1em;
 }
 
 

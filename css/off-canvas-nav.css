@@ -170,7 +170,9 @@ input[type=range]:focus::-ms-fill-upper {
 
 .smallRankingWidget > .name
 {
-  line-height: 2.6em;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
   display: inline-block;
   margin-left: 1em;
 }

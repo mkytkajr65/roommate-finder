@@ -34,6 +34,7 @@
   transform: rotate(180deg);
 }
 
+
 .c100 {
   position: relative;
   font-size: 120px;
@@ -845,6 +846,11 @@
   border-color: #c6ff00 !important;
 }
 .c100.dark > span {
+  color: black;
+}
+
+.c100 > span
+{
   color: black;
 }
 .c100.dark:after {
