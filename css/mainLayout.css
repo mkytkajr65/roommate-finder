@@ -3,9 +3,15 @@ body
 	background-color: #EFEFEF;
 }
 
+#toggle
+{
+    cursor: pointer;
+}
+
 html, body
 {
     padding-bottom: 4em;
+    height: 100% !important;
 }
 
 .entireWidth
@@ -79,6 +85,12 @@ html, body
     border:1px solid #337ab7;
 }
 
+.center
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .neonBorder
 {
     border:1px solid #73E83B;
@@ -124,9 +136,39 @@ html, body
     padding-top: 1em;
 }
 
+.paddingTop2
+{
+    padding-top: 2em;
+}
+
 .paddingTop3
 {
     padding-top: 3em;
+}
+
+#signinOverlay
+{
+    height: 100%;
+    width: 100%;
+    background-color: #333333;
+    opacity: .95;
+    position: absolute;
+    z-index:    99999;
+    top:        0; 
+    left:       0; 
+    position:   fixed; 
+}
+
+#passwordModal
+{
+    position: fixed;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    width: 40em;
+    height: 25em;
+    background-color: white;
+    padding: 3em;
 }
 
 

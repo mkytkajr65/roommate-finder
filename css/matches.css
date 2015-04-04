@@ -10,13 +10,14 @@
 	background-color: white;
 	border-radius: 5px;
 	padding:1em;
+	box-shadow: 2px 2px 5px;
 }
 
 .largeRankingWidget li
 {
 	list-style-type: none;
 	background-color: #484848;
-	margin: .5em 0;
+	margin: .7em 0;
 	color:white;
 	padding: .3em;
 	border-radius: 5px;
@@ -32,7 +33,7 @@
 	height: 8em;
 	background-image: url("../images/default.jpg");
 	background-size:cover;
-	background-position:-2em 0em;
+	background-position:-.7em 0em;
 	border: 2px solid white;
 }
 

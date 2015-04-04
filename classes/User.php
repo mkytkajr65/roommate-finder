@@ -18,8 +18,8 @@ class User
 				if($this->find($user))
 				{
 					$this->_isLoggedIn = true;
-					$this->bio = $this->data()->bio;
-					$this->picture = $this->data()->picture;
+					//$this->bio = $this->data()->bio;
+					//$this->picture = $this->data()->picture;
 				}
 				else
 				{
@@ -120,7 +120,6 @@ class User
 				$hashed = Hash::make($password, $this->data()->salt);
 				if($this->data()->password === $hashed)
 				{
-					echo "matches";
 					Session::put($this->_sessionName, $this->data()->id);
 
 					if($remember)

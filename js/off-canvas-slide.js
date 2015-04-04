@@ -3,6 +3,7 @@ var off_canvas = $("#off-canvas-menu");
 toggleSpan.click(function(){
     off_canvas.animate({width: 'toggle'}, 400);
     $("#off-canvas-menu > div").toggle();
+    console.log("clicked");
 });
 
 
@@ -18,4 +19,7 @@ $(document).ready(function(){
 		      $(this).find(".name").css('font-size', '1.3em');
 		  }
 	});
+	var windowHeight = $(document).height();
+
+   $('#off-canvas-menu').css('height', windowHeight+'px');
 });

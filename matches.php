@@ -32,6 +32,10 @@
           error_reporting(-1);
       */
       include("navbar.php");
+      /*if(true)
+      {
+        include("signin.php");
+      }*/
       include("off-canvas-nav.php");
     ?>
     <div class="pushContainer"></div>
@@ -41,13 +45,26 @@
           <div class="row">
             <div class="col-md-10 center-block" id="matchArea">
               <div class="row">
-                <div class="col-md-6 largeRankingWidget center-block">
+                <div class="form-group col-md-3" id="sortMatchArea">
+                  <label>Sort By:</label>
+                  <select class="form-control">
+                      <option>Match Percentage</option>
+                      <option>Sleeping Match</option>
+                      <option>Studying Match</option>
+                      <option>Room Match</option>
+                      <option>Personal Match</option>
+                      <option>Lifestyle Match</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row spacing2">
+                <div class="col-md-8 largeRankingWidget center-block">
                   <div class="topBannerForWidget">
                     <div class="row paddingTop1">
                       <div class="profilePic col-md-3 center-block"></div>
                     </div>
                     <div class="row spacing1">
-                      <div class="col-md-5 center-block profileName">
+                      <div class="col-md-4 center-block profileName">
                         <p class="text-center lead"><a class="profileLink" href="#">Jake Dunlap</a></p>
                       </div>
                     </div>
@@ -60,15 +77,15 @@
                         </div>
                       </div>
                       <div class="row">
-                        <div class="col-md-12 paddingTop3">
-                          <div class="c100 p89 large"><span>89%</span><div class="slice"><div class="bar"></div><div class="fill"></div></div></div>
+                        <div class="col-md-12 paddingTop2">
+                          <div class="c100 p89 large center"><span>89%</span><div class="slice"><div class="bar"></div><div class="fill"></div></div></div>
                         </div>
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="row">
                         <div class="col-md-12">
-                          <h4>Sleeping:</h4>
+                          <h4 class="text-center">Sleeping</h4>
                         </div>
                       </div>
                       <div class="row">
@@ -85,7 +102,7 @@
                     <div class="col-md-4">
                       <div class="row">
                         <div class="col-md-12">
-                          <h4>Studying:</h4>
+                          <h4 class="text-center">Studying</h4>
                         </div>
                       </div>
                       <div class="row">
@@ -103,7 +120,7 @@
                     <div class="col-md-4">
                       <div class="row">
                         <div class="col-md-12">
-                          <h4>Room:</h4>
+                          <h4 class="text-center">Room</h4>
                         </div>
                       </div>
                       <div class="row">
@@ -120,7 +137,7 @@
                     <div class="col-md-4">
                       <div class="row">
                         <div class="col-md-12">
-                          <h4>Personal:</h4>
+                          <h4 class="text-center">Personal</h4>
                         </div>
                       </div>
                       <div class="row">
@@ -137,7 +154,1127 @@
                     <div class="col-md-4">
                       <div class="row">
                         <div class="col-md-12">
-                          <h4>Lifestyle:</h4>
+                          <h4 class="text-center">Lifestyle</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Prefers roommate with <strong>active lifestyle</strong></li>
+                            <li>Music tastes are: <strong>Rap/Hiphop</strong>, <strong>Rock</strong> and <strong>Christian</strong></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row spacing2">
+                <div class="col-md-8 largeRankingWidget center-block">
+                  <div class="topBannerForWidget">
+                    <div class="row paddingTop1">
+                      <div class="profilePic col-md-3 center-block"></div>
+                    </div>
+                    <div class="row spacing1">
+                      <div class="col-md-4 center-block profileName">
+                        <p class="text-center lead"><a class="profileLink" href="#">Jake Dunlap</a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row spacing2">
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Match Rating</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12 paddingTop2">
+                          <div class="c100 p89 large center"><span>89%</span><div class="slice"><div class="bar"></div><div class="fill"></div></div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Sleeping</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Sleeper Type: <strong>light</strong></li>
+                            <li>Sleeps with <strong>lights on</strong></li>
+                            <li>Goes to sleep <strong>before 10pm</strong></li>
+                            <li>Wakes up <strong>before 6am</strong></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Studying</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Prefers to <strong>not</strong> study in room</li>
+                            <li>Studies <strong>late at night</strong></li>
+                            <li><strong>Does not </strong> require absolute quiet</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row spacing2">
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Room</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="paddingHalf">
+                            <li><strong>Light</strong> sleeper</li>
+                            <li>Prefers room to be <strong>colder</strong></li>
+                            <li><strong>Always neat and organized</strong></li>
+                            <li><strong>Willing to have and split the cost for </strong>cable tv</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Personal</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="paddingHalf">
+                            <li><strong>Sometimes</strong> needs alone time</li>
+                            <li><strong>Comfortable</strong> with sharing belongings</li>
+                            <li><strong>neat and organized</strong></li>
+                            <li><strong>Quiet and withdrawn</strong> when bothered</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Lifestyle</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Prefers roommate with <strong>active lifestyle</strong></li>
+                            <li>Music tastes are: <strong>Rap/Hiphop</strong>, <strong>Rock</strong> and <strong>Christian</strong></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row spacing2">
+                <div class="col-md-8 largeRankingWidget center-block">
+                  <div class="topBannerForWidget">
+                    <div class="row paddingTop1">
+                      <div class="profilePic col-md-3 center-block"></div>
+                    </div>
+                    <div class="row spacing1">
+                      <div class="col-md-4 center-block profileName">
+                        <p class="text-center lead"><a class="profileLink" href="#">Jake Dunlap</a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row spacing2">
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Match Rating</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12 paddingTop2">
+                          <div class="c100 p89 large center"><span>89%</span><div class="slice"><div class="bar"></div><div class="fill"></div></div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Sleeping</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Sleeper Type: <strong>light</strong></li>
+                            <li>Sleeps with <strong>lights on</strong></li>
+                            <li>Goes to sleep <strong>before 10pm</strong></li>
+                            <li>Wakes up <strong>before 6am</strong></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Studying</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Prefers to <strong>not</strong> study in room</li>
+                            <li>Studies <strong>late at night</strong></li>
+                            <li><strong>Does not </strong> require absolute quiet</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row spacing2">
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Room</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="paddingHalf">
+                            <li><strong>Light</strong> sleeper</li>
+                            <li>Prefers room to be <strong>colder</strong></li>
+                            <li><strong>Always neat and organized</strong></li>
+                            <li><strong>Willing to have and split the cost for </strong>cable tv</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Personal</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="paddingHalf">
+                            <li><strong>Sometimes</strong> needs alone time</li>
+                            <li><strong>Comfortable</strong> with sharing belongings</li>
+                            <li><strong>neat and organized</strong></li>
+                            <li><strong>Quiet and withdrawn</strong> when bothered</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Lifestyle</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Prefers roommate with <strong>active lifestyle</strong></li>
+                            <li>Music tastes are: <strong>Rap/Hiphop</strong>, <strong>Rock</strong> and <strong>Christian</strong></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row spacing2">
+                <div class="col-md-8 largeRankingWidget center-block">
+                  <div class="topBannerForWidget">
+                    <div class="row paddingTop1">
+                      <div class="profilePic col-md-3 center-block"></div>
+                    </div>
+                    <div class="row spacing1">
+                      <div class="col-md-4 center-block profileName">
+                        <p class="text-center lead"><a class="profileLink" href="#">Jake Dunlap</a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row spacing2">
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Match Rating</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12 paddingTop2">
+                          <div class="c100 p89 large center"><span>89%</span><div class="slice"><div class="bar"></div><div class="fill"></div></div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Sleeping</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Sleeper Type: <strong>light</strong></li>
+                            <li>Sleeps with <strong>lights on</strong></li>
+                            <li>Goes to sleep <strong>before 10pm</strong></li>
+                            <li>Wakes up <strong>before 6am</strong></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Studying</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Prefers to <strong>not</strong> study in room</li>
+                            <li>Studies <strong>late at night</strong></li>
+                            <li><strong>Does not </strong> require absolute quiet</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row spacing2">
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Room</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="paddingHalf">
+                            <li><strong>Light</strong> sleeper</li>
+                            <li>Prefers room to be <strong>colder</strong></li>
+                            <li><strong>Always neat and organized</strong></li>
+                            <li><strong>Willing to have and split the cost for </strong>cable tv</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Personal</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="paddingHalf">
+                            <li><strong>Sometimes</strong> needs alone time</li>
+                            <li><strong>Comfortable</strong> with sharing belongings</li>
+                            <li><strong>neat and organized</strong></li>
+                            <li><strong>Quiet and withdrawn</strong> when bothered</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Lifestyle</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Prefers roommate with <strong>active lifestyle</strong></li>
+                            <li>Music tastes are: <strong>Rap/Hiphop</strong>, <strong>Rock</strong> and <strong>Christian</strong></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row spacing2">
+                <div class="col-md-8 largeRankingWidget center-block">
+                  <div class="topBannerForWidget">
+                    <div class="row paddingTop1">
+                      <div class="profilePic col-md-3 center-block"></div>
+                    </div>
+                    <div class="row spacing1">
+                      <div class="col-md-4 center-block profileName">
+                        <p class="text-center lead"><a class="profileLink" href="#">Jake Dunlap</a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row spacing2">
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Match Rating</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12 paddingTop2">
+                          <div class="c100 p89 large center"><span>89%</span><div class="slice"><div class="bar"></div><div class="fill"></div></div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Sleeping</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Sleeper Type: <strong>light</strong></li>
+                            <li>Sleeps with <strong>lights on</strong></li>
+                            <li>Goes to sleep <strong>before 10pm</strong></li>
+                            <li>Wakes up <strong>before 6am</strong></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Studying</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Prefers to <strong>not</strong> study in room</li>
+                            <li>Studies <strong>late at night</strong></li>
+                            <li><strong>Does not </strong> require absolute quiet</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row spacing2">
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Room</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="paddingHalf">
+                            <li><strong>Light</strong> sleeper</li>
+                            <li>Prefers room to be <strong>colder</strong></li>
+                            <li><strong>Always neat and organized</strong></li>
+                            <li><strong>Willing to have and split the cost for </strong>cable tv</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Personal</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="paddingHalf">
+                            <li><strong>Sometimes</strong> needs alone time</li>
+                            <li><strong>Comfortable</strong> with sharing belongings</li>
+                            <li><strong>neat and organized</strong></li>
+                            <li><strong>Quiet and withdrawn</strong> when bothered</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Lifestyle</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Prefers roommate with <strong>active lifestyle</strong></li>
+                            <li>Music tastes are: <strong>Rap/Hiphop</strong>, <strong>Rock</strong> and <strong>Christian</strong></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row spacing2">
+                <div class="col-md-8 largeRankingWidget center-block">
+                  <div class="topBannerForWidget">
+                    <div class="row paddingTop1">
+                      <div class="profilePic col-md-3 center-block"></div>
+                    </div>
+                    <div class="row spacing1">
+                      <div class="col-md-4 center-block profileName">
+                        <p class="text-center lead"><a class="profileLink" href="#">Jake Dunlap</a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row spacing2">
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Match Rating</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12 paddingTop2">
+                          <div class="c100 p89 large center"><span>89%</span><div class="slice"><div class="bar"></div><div class="fill"></div></div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Sleeping</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Sleeper Type: <strong>light</strong></li>
+                            <li>Sleeps with <strong>lights on</strong></li>
+                            <li>Goes to sleep <strong>before 10pm</strong></li>
+                            <li>Wakes up <strong>before 6am</strong></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Studying</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Prefers to <strong>not</strong> study in room</li>
+                            <li>Studies <strong>late at night</strong></li>
+                            <li><strong>Does not </strong> require absolute quiet</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row spacing2">
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Room</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="paddingHalf">
+                            <li><strong>Light</strong> sleeper</li>
+                            <li>Prefers room to be <strong>colder</strong></li>
+                            <li><strong>Always neat and organized</strong></li>
+                            <li><strong>Willing to have and split the cost for </strong>cable tv</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Personal</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="paddingHalf">
+                            <li><strong>Sometimes</strong> needs alone time</li>
+                            <li><strong>Comfortable</strong> with sharing belongings</li>
+                            <li><strong>neat and organized</strong></li>
+                            <li><strong>Quiet and withdrawn</strong> when bothered</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Lifestyle</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Prefers roommate with <strong>active lifestyle</strong></li>
+                            <li>Music tastes are: <strong>Rap/Hiphop</strong>, <strong>Rock</strong> and <strong>Christian</strong></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row spacing2">
+                <div class="col-md-8 largeRankingWidget center-block">
+                  <div class="topBannerForWidget">
+                    <div class="row paddingTop1">
+                      <div class="profilePic col-md-3 center-block"></div>
+                    </div>
+                    <div class="row spacing1">
+                      <div class="col-md-4 center-block profileName">
+                        <p class="text-center lead"><a class="profileLink" href="#">Jake Dunlap</a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row spacing2">
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Match Rating</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12 paddingTop2">
+                          <div class="c100 p89 large center"><span>89%</span><div class="slice"><div class="bar"></div><div class="fill"></div></div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Sleeping</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Sleeper Type: <strong>light</strong></li>
+                            <li>Sleeps with <strong>lights on</strong></li>
+                            <li>Goes to sleep <strong>before 10pm</strong></li>
+                            <li>Wakes up <strong>before 6am</strong></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Studying</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Prefers to <strong>not</strong> study in room</li>
+                            <li>Studies <strong>late at night</strong></li>
+                            <li><strong>Does not </strong> require absolute quiet</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row spacing2">
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Room</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="paddingHalf">
+                            <li><strong>Light</strong> sleeper</li>
+                            <li>Prefers room to be <strong>colder</strong></li>
+                            <li><strong>Always neat and organized</strong></li>
+                            <li><strong>Willing to have and split the cost for </strong>cable tv</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Personal</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="paddingHalf">
+                            <li><strong>Sometimes</strong> needs alone time</li>
+                            <li><strong>Comfortable</strong> with sharing belongings</li>
+                            <li><strong>neat and organized</strong></li>
+                            <li><strong>Quiet and withdrawn</strong> when bothered</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Lifestyle</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Prefers roommate with <strong>active lifestyle</strong></li>
+                            <li>Music tastes are: <strong>Rap/Hiphop</strong>, <strong>Rock</strong> and <strong>Christian</strong></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row spacing2">
+                <div class="col-md-8 largeRankingWidget center-block">
+                  <div class="topBannerForWidget">
+                    <div class="row paddingTop1">
+                      <div class="profilePic col-md-3 center-block"></div>
+                    </div>
+                    <div class="row spacing1">
+                      <div class="col-md-4 center-block profileName">
+                        <p class="text-center lead"><a class="profileLink" href="#">Jake Dunlap</a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row spacing2">
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Match Rating</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12 paddingTop2">
+                          <div class="c100 p89 large center"><span>89%</span><div class="slice"><div class="bar"></div><div class="fill"></div></div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Sleeping</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Sleeper Type: <strong>light</strong></li>
+                            <li>Sleeps with <strong>lights on</strong></li>
+                            <li>Goes to sleep <strong>before 10pm</strong></li>
+                            <li>Wakes up <strong>before 6am</strong></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Studying</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Prefers to <strong>not</strong> study in room</li>
+                            <li>Studies <strong>late at night</strong></li>
+                            <li><strong>Does not </strong> require absolute quiet</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row spacing2">
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Room</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="paddingHalf">
+                            <li><strong>Light</strong> sleeper</li>
+                            <li>Prefers room to be <strong>colder</strong></li>
+                            <li><strong>Always neat and organized</strong></li>
+                            <li><strong>Willing to have and split the cost for </strong>cable tv</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Personal</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="paddingHalf">
+                            <li><strong>Sometimes</strong> needs alone time</li>
+                            <li><strong>Comfortable</strong> with sharing belongings</li>
+                            <li><strong>neat and organized</strong></li>
+                            <li><strong>Quiet and withdrawn</strong> when bothered</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Lifestyle</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Prefers roommate with <strong>active lifestyle</strong></li>
+                            <li>Music tastes are: <strong>Rap/Hiphop</strong>, <strong>Rock</strong> and <strong>Christian</strong></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row spacing2">
+                <div class="col-md-8 largeRankingWidget center-block">
+                  <div class="topBannerForWidget">
+                    <div class="row paddingTop1">
+                      <div class="profilePic col-md-3 center-block"></div>
+                    </div>
+                    <div class="row spacing1">
+                      <div class="col-md-4 center-block profileName">
+                        <p class="text-center lead"><a class="profileLink" href="#">Jake Dunlap</a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row spacing2">
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Match Rating</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12 paddingTop2">
+                          <div class="c100 p89 large center"><span>89%</span><div class="slice"><div class="bar"></div><div class="fill"></div></div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Sleeping</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Sleeper Type: <strong>light</strong></li>
+                            <li>Sleeps with <strong>lights on</strong></li>
+                            <li>Goes to sleep <strong>before 10pm</strong></li>
+                            <li>Wakes up <strong>before 6am</strong></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Studying</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Prefers to <strong>not</strong> study in room</li>
+                            <li>Studies <strong>late at night</strong></li>
+                            <li><strong>Does not </strong> require absolute quiet</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row spacing2">
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Room</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="paddingHalf">
+                            <li><strong>Light</strong> sleeper</li>
+                            <li>Prefers room to be <strong>colder</strong></li>
+                            <li><strong>Always neat and organized</strong></li>
+                            <li><strong>Willing to have and split the cost for </strong>cable tv</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Personal</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="paddingHalf">
+                            <li><strong>Sometimes</strong> needs alone time</li>
+                            <li><strong>Comfortable</strong> with sharing belongings</li>
+                            <li><strong>neat and organized</strong></li>
+                            <li><strong>Quiet and withdrawn</strong> when bothered</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Lifestyle</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Prefers roommate with <strong>active lifestyle</strong></li>
+                            <li>Music tastes are: <strong>Rap/Hiphop</strong>, <strong>Rock</strong> and <strong>Christian</strong></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row spacing2">
+                <div class="col-md-8 largeRankingWidget center-block">
+                  <div class="topBannerForWidget">
+                    <div class="row paddingTop1">
+                      <div class="profilePic col-md-3 center-block"></div>
+                    </div>
+                    <div class="row spacing1">
+                      <div class="col-md-4 center-block profileName">
+                        <p class="text-center lead"><a class="profileLink" href="#">Jake Dunlap</a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row spacing2">
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Match Rating</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12 paddingTop2">
+                          <div class="c100 p89 large center"><span>89%</span><div class="slice"><div class="bar"></div><div class="fill"></div></div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Sleeping</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Sleeper Type: <strong>light</strong></li>
+                            <li>Sleeps with <strong>lights on</strong></li>
+                            <li>Goes to sleep <strong>before 10pm</strong></li>
+                            <li>Wakes up <strong>before 6am</strong></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Studying</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Prefers to <strong>not</strong> study in room</li>
+                            <li>Studies <strong>late at night</strong></li>
+                            <li><strong>Does not </strong> require absolute quiet</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row spacing2">
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Room</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="paddingHalf">
+                            <li><strong>Light</strong> sleeper</li>
+                            <li>Prefers room to be <strong>colder</strong></li>
+                            <li><strong>Always neat and organized</strong></li>
+                            <li><strong>Willing to have and split the cost for </strong>cable tv</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Personal</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="paddingHalf">
+                            <li><strong>Sometimes</strong> needs alone time</li>
+                            <li><strong>Comfortable</strong> with sharing belongings</li>
+                            <li><strong>neat and organized</strong></li>
+                            <li><strong>Quiet and withdrawn</strong> when bothered</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Lifestyle</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Prefers roommate with <strong>active lifestyle</strong></li>
+                            <li>Music tastes are: <strong>Rap/Hiphop</strong>, <strong>Rock</strong> and <strong>Christian</strong></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row spacing2">
+                <div class="col-md-8 largeRankingWidget center-block">
+                  <div class="topBannerForWidget">
+                    <div class="row paddingTop1">
+                      <div class="profilePic col-md-3 center-block"></div>
+                    </div>
+                    <div class="row spacing1">
+                      <div class="col-md-4 center-block profileName">
+                        <p class="text-center lead"><a class="profileLink" href="#">Jake Dunlap</a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row spacing2">
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Match Rating</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12 paddingTop2">
+                          <div class="c100 p89 large center"><span>89%</span><div class="slice"><div class="bar"></div><div class="fill"></div></div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Sleeping</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Sleeper Type: <strong>light</strong></li>
+                            <li>Sleeps with <strong>lights on</strong></li>
+                            <li>Goes to sleep <strong>before 10pm</strong></li>
+                            <li>Wakes up <strong>before 6am</strong></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Studying</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="noPadding">
+                            <li>Prefers to <strong>not</strong> study in room</li>
+                            <li>Studies <strong>late at night</strong></li>
+                            <li><strong>Does not </strong> require absolute quiet</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row spacing2">
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Room</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="paddingHalf">
+                            <li><strong>Light</strong> sleeper</li>
+                            <li>Prefers room to be <strong>colder</strong></li>
+                            <li><strong>Always neat and organized</strong></li>
+                            <li><strong>Willing to have and split the cost for </strong>cable tv</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Personal</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <ul class="paddingHalf">
+                            <li><strong>Sometimes</strong> needs alone time</li>
+                            <li><strong>Comfortable</strong> with sharing belongings</li>
+                            <li><strong>neat and organized</strong></li>
+                            <li><strong>Quiet and withdrawn</strong> when bothered</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h4 class="text-center">Lifestyle</h4>
                         </div>
                       </div>
                       <div class="row">
