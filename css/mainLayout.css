@@ -25,6 +25,11 @@ html, body
     margin-top: 2em;
 }
 
+.spacing1
+{
+    margin-top: 1em;
+}
+
 .spacingHalf
 {
     margin-top: .5em;
@@ -117,6 +122,11 @@ html, body
 .paddingTop1
 {
     padding-top: 1em;
+}
+
+.paddingTop3
+{
+    padding-top: 3em;
 }
 
 

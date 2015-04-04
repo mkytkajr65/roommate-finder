@@ -12,15 +12,43 @@
 	padding:1em;
 }
 
+.largeRankingWidget li
+{
+	list-style-type: none;
+	background-color: #484848;
+	margin: .5em 0;
+	color:white;
+	padding: .3em;
+	border-radius: 5px;
+}
+
+.largeRankingWidget strong
+{
+	color: #73E83B;
+}
+
 .profilePic
 {
 	height: 8em;
 	background-image: url("../images/default.jpg");
 	background-size:cover;
 	background-position:-2em 0em;
+	border: 2px solid white;
 }
 
 .topBannerForWidget
 {
     background-color: #484848;
+}
+
+.profileName > p
+{
+	background-color: white;
+	border-radius: 1px;
+	padding: 0 .5em;
+}
+
+.profileName > p > a
+{
+	color: #A31919;
 }

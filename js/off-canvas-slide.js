@@ -10,7 +10,6 @@ $(document).ready(function(){
 	var textlength;
 	$(".smallRankingWidget").each(function(){
 		textlength = $(this).find(".name").text().length;
-		console.log(textlength);
 		if(textlength < 12) {
 		   // Do noting 
 		  } else if (textlength < 15) {
