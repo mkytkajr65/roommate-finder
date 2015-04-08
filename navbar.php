@@ -20,6 +20,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="index.php">Sign In</a></li>
+        <li <?php echo ($pageChecker->isPage("administrator.php")) ? "class='active'" : ''; ?>><a href="administrator.php">Administrative Access</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Name <span class="caret neon"></span></a>
           <ul class="dropdown-menu" role="menu">

@@ -44,10 +44,10 @@
           <div class="col-md-8 center-block">
             <div class="row">
               <div class="col-md-12" id="questionForm">
-                  <div id="questionTabPanel" role="tabpanel">
+                  <div class="questionTabPanel" role="tabpanel">
 
                     <!-- Nav tabs -->
-                    <ul id="questionTypeNav" class="nav nav-tabs noselect" role="tablist">
+                    <ul class="nav nav-tabs noselect questionTypeNav" role="tablist">
                       <li role="presentation" class="active"><a href="#basics" aria-controls="basics" role="tab" data-toggle="tab">Basics</a></li>
                       <li role="presentation"><a href="#sleeping" aria-controls="profile" role="tab" data-toggle="tab">Sleeping</a></li>
                       <li role="presentation"><a href="#studying" aria-controls="studying" role="tab" data-toggle="tab">Studying</a></li>
@@ -155,11 +155,10 @@
                                       <div class="container-fluid">
                                         <div class="col-md-12 answerInput">
                                               <div class="form-group">
-                                                <label for="sel1">Sleeper Type:</label>
                                                 <select class="form-control" id="sel1">
-                                                  <option>Light</option>
-                                                  <option>Medium</option>
-                                                  <option>Heavy</option>
+                                                  <option value="0">Light</option>
+                                                  <option value="1">Medium</option>
+                                                  <option value="2">Heavy</option>
                                                 </select>
                                               </div>
                                         </div>
@@ -193,14 +192,12 @@
                                       <div class="container-fluid">
                                         <div class="col-md-12 answerInput">
                                               <div class="form-group">
-                                                <label for="sel1">Bedtime:</label>
                                                 <select class="form-control" id="sel2">
-                                                  <option>Before 10 PM</option>
-                                                  <option>10 PM</option>
-                                                  <option>11 PM</option>
-												  <option>12 AM</option>
-												  <option>1 AM</option>
-												  <option>After 1 AM</option>
+                                                  <option value="0">Before 10 PM</option>
+                                                  <option value="1">10-11pm</option>
+                                                  <option value="2">11-12am</option>
+												  <option value="3">12-1am</option>
+												  <option value="4">After 1 AM</option>
                                                 </select>
                                               </div>
                                         </div>
@@ -210,14 +207,13 @@
                                       <div class="container-fluid">
                                         <div class="col-md-12 answerInput">
                                               <div class="form-group">
-                                                <label for="sel1">Rise Time:</label>
                                                 <select class="form-control" id="sel3">
-                                                  <option>Before 6 AM</option>
-                                                  <option>7 AM</option>
-                                                  <option>8 AM</option>
-												  <option>9 AM</option>
-												  <option>10 AM</option>
-												  <option>After 10 AM</option>
+                                                  <option value="0">Before 6 AM</option>
+                                                  <option value="1">6-7am</option>
+                                                  <option value="2">7-8am</option>
+                        												  <option value="3">8-9am</option>
+                        												  <option value="4">9-10am</option>
+                        												  <option value="5">After 10 AM</option>
                                                 </select>
                                               </div>
                                         </div>
@@ -262,9 +258,9 @@
                                         <div class="col-md-12 answerInput">
                                               <div class="form-group">
                                                 <select class="form-control" id="sel4">
-                                                  <option>During the Day</option>
-                                                  <option>In the Evening</option>
-												  <option>Late at Night</option>
+                                                  <option value="0">During the Day</option>
+                                                  <option value="1">In the Evening</option>
+												                          <option value="2">Late at Night</option>
                                                 </select>
                                               </div>
                                         </div>
@@ -290,14 +286,6 @@
                                               <div class="sliderValue" class="col-md-4"></div>
                                             </div>
                                             <input class="preferenceSlider" type="range" value="1"  min="1" max="5" />
-                                          </div><div class="col-md-6">
-                                            <div class="row">
-                                              <div class="col-md-7 col-md-offset-1">
-                                                <label>Preference Rating</label>
-                                              </div>
-                                              <div class="sliderValue" class="col-md-2"></div>
-                                            </div>
-                                            <input class="preferenceSlider" type="range" value="1"  min="1" max="5" />
                                           </div>
                                         </div>
                                       </div>
@@ -317,8 +305,8 @@
                                         <div class="col-md-12 answerInput">
                                               <div class="form-group">
                                                 <select class="form-control" id="sel5">
-                                                  <option>Warmer</option>
-                                                  <option>Colder</option>
+                                                  <option value="0">Warmer</option>
+                                                  <option value="1">Colder</option>
                                                 </select>
                                               </div>
                                         </div>
@@ -329,10 +317,10 @@
                                         <div class="col-md-12 answerInput">
                                               <div class="form-group">
                                                 <select class="form-control" id="sel6">
-                                                  <option>Always neat and organized</option>
-                                                  <option>Neat most of the time</option>
-												  <option>Cluttered most of the time</option>
-												  <option>Always messy and disorganized</option>
+                                                  <option value="0">Always neat and organized</option>
+                                                  <option value="1">Neat most of the time</option>
+                        												  <option value="2">Cluttered most of the time</option>
+                        												  <option value="3">Always messy and disorganized</option>
                                                 </select>
                                               </div>
                                         </div>
@@ -343,10 +331,10 @@
                                         <div class="col-md-12 answerInput">
                                               <div class="form-group">                                                
                                                 <select class="form-control" id="sel7">
-                                                  <option>I want TV in my room</option>
-                                                  <option>I don't want TV in my room</option>
-												  <option>No Preference, and not interested in splitting the cost</option>
-												  <option>No Preference, but willing to split the cost</option>
+                                                  <option value="0">I want TV in my room</option>
+                                                  <option value="1">I don't want TV in my room</option>
+                        												  <option value="2">No Preference, and not interested in splitting the cost</option>
+                        												  <option value="3">No Preference, but willing to split the cost</option>
                                                 </select>
                                               </div>
                                         </div>
@@ -367,10 +355,10 @@
                                         <div class="col-md-12 answerInput">
                                               <div class="form-group">
                                                 <select class="form-control" id="sel12">
-                                                  <option>Often</option>
-                                                  <option>Sometimes</option>
-                                                  <option>Rarely</option>
-                                                  <option>Never</option>
+                                                  <option value="0">Often</option>
+                                                  <option value="1">Sometimes</option>
+                                                  <option value="2">Rarely</option>
+                                                  <option value="3">Never</option>
                                                 </select>
                                               </div>
                                         </div>
@@ -382,9 +370,9 @@
                                               <div class="form-group">
                                                 <label for="sel1">I am:</label>
                                                 <select class="form-control" id="sel9">
-                                                  <option>not comfortable sharing my belongings</option>
-                                                  <option>willing to share most things if asked first.</option>
-                                                  <option>willing to share anything without restrictions.</option>
+                                                  <option value="0">not comfortable sharing my belongings</option>
+                                                  <option value="1">willing to share most things if asked first.</option>
+                                                  <option value="2">willing to share anything without restrictions.</option>
                                                 </select>
                                               </div>
                                         </div>
@@ -395,8 +383,8 @@
                                         <div class="col-md-12 answerInput">
                                               <div class="form-group">
                                                 <select class="form-control" id="sel10">
-                                                  <option>I like to talk about it.</option>
-                                                  <option>I tend to become quiet and withdrawn.</option>
+                                                  <option value="0">I like to talk about it.</option>
+                                                  <option value="1">I tend to become quiet and withdrawn.</option>
                                                 </select>
                                               </div>
                                         </div>
@@ -417,8 +405,8 @@
                                         <div class="col-md-12 answerInput">
                                               <div class="form-group">
                                                 <select class="form-control" id="sel1">
-                                                  <option>an active lifestyle</option>
-                                                  <option>a quiet lifestyle</option>
+                                                  <option value="0">an active lifestyle</option>
+                                                  <option value="1">a quiet lifestyle</option>
                                                 </select>
                                               </div>
                                         </div>
