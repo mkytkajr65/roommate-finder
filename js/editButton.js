@@ -70,18 +70,23 @@ $(document).on('click', '.saveButton' ,function(){
 
 	//get text from text area
 	var qTextNodeTextArea = $(this).parentsUntil(".aQuestion").parent().find(".questionText textarea");
-	var qText = $.trim(qTextNodeTextArea.text());
+	var qText = $.trim(qTextNodeTextArea.val());
 
 	//remove textarea and replace with text
 	var qTextNode =  $(this).parentsUntil(".aQuestion").parent().find(".questionText > p");
 	qTextNode.empty();
+	console.log(qText);
 	qTextNode.append(qText);
+
+	//save text in database
 
 	//get text from selected option
 	var selectedOption = $(this).parentsUntil(".aQuestion").find(".selectEditType option:selected").text();
 	var qTypeNode = $(this).parent().parent().find(".questionType small");
 	qTypeNode.empty();
 	qTypeNode.append(selectedOption);
+
+	//save selected option in database
 
 	//remove input box
 	var optionsAdd = $(this).parent().parent().find(".addOptions");
@@ -111,12 +116,16 @@ $(document).on('keyup','.addOptionsInput', function(e){
 });
 
 $(document).on('enterKeyOptions','.addOptionsInput',function(e){
-	if($(this).is(":focus"))//if true, the input field is in focus and the enter key has been pressed
+	var inputFieldText = $.trim($(this).val());
+	if($(this).is(":focus") && inputFieldText.length > 0)//if true, the input field is in focus and the enter key has been pressed
 	{
 		var thisList = $(this).parentsUntil(".aQuestion").find(".optionEntryList");
-		var inputFieldText = $.trim($(this).val());
-		var htmlToAppend = "<li><div class='optionEntry x_out'>"
-		 + inputFieldText + "</div></li>";
+		var htmlToAppend = "<li><div class='optionEntry'>"
+		 + inputFieldText + "<span class='x_out'>x</span></div></li>";
+		if(thisList.find(".novalue").length > 0)
+		{
+			thisList.empty();
+		}
 		thisList.append(htmlToAppend);
 
 

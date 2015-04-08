@@ -77,75 +77,93 @@
                           <div class="row adminPanel">
                             <div id="question_tab_area" class="col-md-12">
                               <div class="row tabSection"><!--Tab Section-->
-                                <div class="col-md-10 center-block">
-                                  <div class="row">
-                                    <div class="col-md-12 aTab text-center">basics</div><!--Particular Tab-->
-                                  </div>
-                                  <div class="row aQuestion">
+                                <div class="col-md-11 center-block">
+                                  <div class="row aTab">
                                     <div class="col-md-11 center-block">
                                       <div class="row">
-                                        <div class="questionText col-md-12">
-                                          <h3>Question</h3><p>Do you have a medical condition which would necessitate a special housing assignment?</p>
+                                        <div class="col-md-12 text-center"><h3 class="tabTitle">basics</h3></div>
+                                      </div>
+                                      <div class="row aQuestion">
+                                        <div class="col-md-11 center-block">
+                                          <div class="row">
+                                            <div class="questionText col-md-12">
+                                              <h3>Question</h3><p>Do you have a medical condition which would necessitate a special housing assignment?</p>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="questionType col-md-12">
+                                              <h3>Type: <small data-type="1">Yes/No with preference slider</small></h3>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="options col-md-12">
+                                              <h3>Options:</h3>
+                                              <ol class="optionEntryList">
+                                                <li><div class="novalue">none</div></li>
+                                              </ol>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-md-10 addOptions center-block"></div>
+                                          </div>
+                                          <div class="row editButtonRow">
+                                            <div class="col-md-4 noselect text-center center-block editButton">edit</div>
+                                          </div>
                                         </div>
-                                      </div>
-                                      <div class="row">
-                                        <div class="questionType col-md-12">
-                                          <h3>Type: <small data-type="1">Yes/No with preference slider</small></h3>
-                                        </div>
-                                      </div>
-                                      <div class="row">
-                                        <div class="options col-md-12">
-                                          <h3>Options:</h3>
-                                          <ol class="optionEntryList">
-                                            <li><div class="novalue">none</div></li>
-                                          </ol>
-                                        </div>
-                                      </div>
-                                      <div class="row">
-                                        <div class="col-md-10 addOptions center-block"></div>
-                                      </div>
-                                      <div class="row editButtonRow">
-                                        <div class="col-md-4 noselect text-center center-block editButton">edit</div>
-                                      </div>
-                                    </div>
                                   </div>
+                                  <div class="row addNewQuestion">
+                                    <div class="col-md-12"><span class="glyphicon glyphicon-plus addNewQ" aria-hidden="true"></span></div>
+                                  </div>
+                                    </div><!--Particular Tab-->
+                                  </div>
+                                  
+                                  
                                 </div>
                               </div>
                               <div class="row tabSection"><!--Tab Section-->
-                                <div class="col-md-10 center-block">
-                                  <div class="row">
-                                    <div class="col-md-12 aTab text-center">sleeping</div><!--Particular Tab-->
-                                  </div>
-                                  <div class="row aQuestion">
+                                <div class="col-md-11 center-block">
+                                  <div class="row aTab">
                                     <div class="col-md-11 center-block">
                                       <div class="row">
-                                        <div class="questionText col-md-12">
-                                          <h3>Question</h3><p>What kind of sleeper are you?</p>
+                                        <div class="col-md-12 text-center"><h3 class="tabTitle">sleeping</h3></div>
+                                      </div>
+                                      <div class="row aQuestion">
+                                        <div class="col-md-11 center-block">
+                                          <div class="row">
+                                            <div class="questionText col-md-12">
+                                              <h3>Question</h3><p>What kind of sleeper are you?</p>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="questionType col-md-12">
+                                              <h3>Type: <small data-type="2">selection</small></h3>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="options col-md-12">
+                                              <h3>Options:</h3>
+                                              <ol class="optionEntryList">
+                                                <li><div class="optionEntry">Light</div></li>
+                                                <li><div class="optionEntry">Medium</div></li>
+                                                <li><div class="optionEntry">Heavy</div></li>
+                                              </ol>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-md-10 addOptions center-block"></div>
+                                          </div>
+                                          <div class="row editButtonRow">
+                                            <div class="col-md-4 noselect text-center center-block editButton">edit</div>
+                                          </div>
                                         </div>
-                                      </div>
-                                      <div class="row">
-                                        <div class="questionType col-md-12">
-                                          <h3>Type: <small data-type="2">Selection</small></h3><!--type value needs to come from database later-->
-                                        </div>
-                                      </div>
-                                      <div class="row">
-                                        <div class="options col-md-12">
-                                          <h3>Options:</h3>
-                                          <ol class="optionEntryList">
-                                            <li><div class="optionEntry">Light</div></li>
-                                            <li><div class="optionEntry">Medium</div></li>
-                                            <li><div class="optionEntry">Heavy</div></li>
-                                          </ol>
-                                        </div>
-                                      </div>
-                                      <div class="row">
-                                        <div class="col-md-10 addOptions center-block"></div>
-                                      </div>
-                                      <div class="row editButtonRow">
-                                        <div class="col-md-4 noselect text-center center-block editButton">edit</div>
-                                      </div>
-                                    </div>
                                   </div>
+                                  <div class="row addNewQuestion">
+                                    <div class="col-md-12"><span class="glyphicon glyphicon-plus addNewQ" aria-hidden="true"></span></div>
+                                  </div>
+                                    </div><!--Particular Tab-->
+                                  </div>
+                                  
+                                  
                                 </div>
                               </div>
                             </div>
