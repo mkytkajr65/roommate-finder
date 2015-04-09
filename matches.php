@@ -57,7 +57,7 @@
                   </select>
                 </div>
               </div>
-              <div class="row spacing2">
+              <div class="row spacing2"><!--Large Widget Starts here-->
                 <div class="col-md-8 largeRankingWidget center-block">
                   <div class="topBannerForWidget">
                     <div class="row paddingTop1">
@@ -168,7 +168,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div><!--Large widget ends here-->
               <div class="row spacing2">
                 <div class="col-md-8 largeRankingWidget center-block">
                   <div class="topBannerForWidget">

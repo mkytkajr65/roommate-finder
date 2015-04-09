@@ -1,4 +1,4 @@
-<?php $pageChecker = new PageChecker(); ?>
+<?php $pageChecker = new PageChecker(); $user = new User(); ?>
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -19,12 +19,11 @@
         <li <?php echo ($pageChecker->isPage("matches.php")) ? "class='active'" : ''; ?>><a href="matches.php">Matches</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="index.php">Sign In</a></li>
         <li <?php echo ($pageChecker->isPage("administrator.php")) ? "class='active'" : ''; ?>><a href="administrator.php">Administrative Access</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Name <span class="caret neon"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $user->first_name . " " . $user->last_name; ?><span class="caret neon"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Profile</a></li>
+            <li><a href="profile.php?id=<?php echo $user->id; ?>">Profile</a></li>
           </ul>
         </li>
       </ul>

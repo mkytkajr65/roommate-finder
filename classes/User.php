@@ -2,7 +2,7 @@
 class User
 {
 	private $_db, $_data, $_sessionName, $_isLoggedIn, $_cookieName;
-	public $picture, $bio;
+	public $picture, $first_name, $last_name, $email, $account_type, $id;
 
 	public function __construct($user = null)
 	{
@@ -18,8 +18,12 @@ class User
 				if($this->find($user))
 				{
 					$this->_isLoggedIn = true;
-					//$this->bio = $this->data()->bio;
-					//$this->picture = $this->data()->picture;
+					$this->id = $this->data()->id;
+					$this->picture = $this->data()->picture;
+					$this->first_name = $this->data()->first_name;
+					$this->last_name = $this->data()->last_name;
+					$this->email = $this->data()->email;
+					$this->account_type = $this->data()->account_type;
 				}
 				else
 				{
@@ -38,7 +42,7 @@ class User
 		if (!$id && $this->getIsLoggedIn()) {
 			$id = $this->data()->id;
 		}
-		if(!$this->_db->update('users', $id, $fields))
+		if(!$this->_db->update('user', $id, $fields))
 		{
 			throw new Exception('There was a problem updating.');
 		}
@@ -46,7 +50,7 @@ class User
 
 	public function create($fields = array())
 	{
-		if(!$this->_db->insert('users', $fields))
+		if(!$this->_db->insert('user', $fields))
 		{
 			throw new Exception('There was a problem creating an account.');
 		}
@@ -57,13 +61,16 @@ class User
 		if($user)
 		{
 			$field = (is_numeric($user)) ? 'id': 'username';
-			$data = $this->_db->get('users', array($field, '=', $user));
+			$data = $this->_db->get('user', array($field, '=', $user));
 
 			if($data->count())
 			{
 				$this->_data = $data->first();
-				$this->bio = $this->data()->bio;
 				$this->picture = $this->data()->picture;
+				$this->first_name = $this->data()->first_name;
+				$this->last_name = $this->data()->last_name;
+				$this->email = $this->data()->email;
+				$this->account_type = $this->data()->account_type;
 				return true;
 			}
 		}
@@ -74,7 +81,7 @@ class User
 		if($email)
 		{
 			$field = "email";
-			$data = $this->_db->get('users', array($field, '=', $email));
+			$data = $this->_db->get('user', array($field, '=', $email));
 
 			if($data->count())
 			{
@@ -117,12 +124,12 @@ class User
 			$user = $this->findWithEmail($email);
 			if($user)
 			{
-				$hashed = Hash::make($password, $this->data()->salt);
-				if($this->data()->password === $hashed)
+				//$hashed = Hash::make($password, $this->data()->salt);
+				if($this->data()->password === $password)
 				{
 					Session::put($this->_sessionName, $this->data()->id);
 
-					if($remember)
+					/*if($remember)
 					{
 						$hash = Hash::unique();
 						$hashCheck = $this->_db->get('users_session',array('user_id', '=', $this->data()->id));
@@ -139,7 +146,7 @@ class User
 							$hash = $hashCheck->first()->hash;
 						}
 						Cookie::put($this->_cookieName, $hash, Config::get('remember/cookie_expiry'));
-					}
+					}*/
 					return true;
 				}
 			}

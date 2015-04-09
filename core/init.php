@@ -7,7 +7,7 @@ $GLOBALS['config'] = array(
 			'host' => '127.0.0.1',
 			'username' => 'root',
 			'password' => 'root',
-			'db' => 'LR'
+			'db' => 'roommate_finder'
 	),
 	'remember' => array(
 		'cookie_name' => 'hash',

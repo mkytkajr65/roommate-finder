@@ -32,10 +32,10 @@
           error_reporting(-1);
       */
       include("navbar.php");
-      /*if(true)
+      if(true)
       {
         include("signin.php");
-      }*/
+      }
     ?>
     <?php include("off-canvas-nav.php"); ?>
       <div class="pushContainer"></div>
