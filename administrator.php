@@ -84,11 +84,12 @@
                                         <div class="col-md-12 text-center"><h3 class="tabTitle">basics</h3></div>
                                       </div>
                                       <div class="row aQuestion">
-                                        <div class="col-md-11 center-block">
+                                        <div class="col-md-12 center-block">
                                           <div class="row">
-                                            <div class="questionText col-md-12">
-                                              <h3>Question</h3><p>Do you have a medical condition which would necessitate a special housing assignment?</p>
+                                            <div class="questionText col-md-8">
+                                              <h3>Question</h3><p>Do you have a medical condition?</p>
                                             </div>
+                                            <div class="col-md-4"><span class="glyphicon glyphicon-remove removeQuestion" aria-hidden="true"></span></div>
                                           </div>
                                           <div class="row">
                                             <div class="questionType col-md-12">
@@ -128,11 +129,12 @@
                                         <div class="col-md-12 text-center"><h3 class="tabTitle">sleeping</h3></div>
                                       </div>
                                       <div class="row aQuestion">
-                                        <div class="col-md-11 center-block">
+                                        <div class="col-md-12 center-block">
                                           <div class="row">
-                                            <div class="questionText col-md-12">
+                                            <div class="questionText col-md-8">
                                               <h3>Question</h3><p>What kind of sleeper are you?</p>
                                             </div>
+                                            <div class="col-md-4"><span class="glyphicon glyphicon-remove removeQuestion" aria-hidden="true"></span></div>
                                           </div>
                                           <div class="row">
                                             <div class="questionType col-md-12">
@@ -188,5 +190,6 @@
     <script src="js/preferenceSlider.js"></script>
     <script src="js/editButton.js"></script>
     <script src="js/addTabs.js"></script>
+    <script src="js/createQuestion.js"></script>
   </body>
 </html>
