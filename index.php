@@ -496,5 +496,6 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/off-canvas-slide.js"></script>
     <script src="js/preferenceSlider.js"></script>
+    <script src="js/on_off_switch.js"></script>
   </body>
 </html>
