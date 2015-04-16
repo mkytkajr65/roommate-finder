@@ -85,14 +85,14 @@ function getTabsWithQuestions()
         		$valNum = 0;
         		foreach ($options as  $option)
         		{
-        			echo '<input type="checkbox" value="'.$valNum.'">'.escapeName($option->name).'>';
+        			echo '<input type="checkbox" value="'.$valNum.'"> '.escapeName($option->name).'<br>';
         		}
 	            echo'</div>';
         	}
         	echo '</div></div></li>';
+        	$qnum++;
         }
         echo '</ol></div></div></form></div>';
-        $qnum++;
     }                                  
 }
 
@@ -106,11 +106,11 @@ function getTabs()
 		if($first)
 		{
 			$first = false;
-			echo '<li role="presentation" class="active"><a href="#'.escapeName($tab->name).'" aria-controls="'.escapeName($tab->name).'" role="tab" data-toggle="tab">'.escapeName($tab->name).'</a></li>';
+			echo '<li role="presentation" class="active"><a href="#'.escapeName($tab->name).'" aria-controls="'.escapeName($tab->name).'" role="tab" data-toggle="tab">'.escapeName(ucfirst($tab->name)).'</a></li>';
 		}
 		else
 		{
-			echo '<li role="presentation"><a href="#'.escapeName($tab->name).'" aria-controls="'.escapeName($tab->name).'" role="tab" data-toggle="tab">'.escapeName($tab->name).'</a></li>';
+			echo '<li role="presentation"><a href="#'.escapeName($tab->name).'" aria-controls="'.escapeName($tab->name).'" role="tab" data-toggle="tab">'.escapeName(ucfirst($tab->name)).'</a></li>';
 		}
 	
 	}
