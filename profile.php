@@ -69,8 +69,8 @@
                         </div>
 
                       </div>
-                      <div class="row marginBottom1">
-                        <div class = "col-md-offset-11 col-md-1">
+                      <div class="row">
+                        <div class = "text-center lead">
                           <a href="http://www.facebook.com" target="_blank">
                             <img border="0" alt="facebook" src="\images\social\FB-f-Logo__blue_29.png" width="29" height="29">
                           </a>
