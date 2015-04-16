@@ -58,14 +58,26 @@
                 <div class="row spacing2"><!--Large Widget Starts here-->
                   <div class="col-md-8 largeRankingWidget center-block">
                     <div class="topBannerForWidget">
+                      <div class="row">
+                      <div class="col-md-10 center-block">
                       <div class="row paddingTop1">
                         <div class="profilePic col-md-3 center-block"></div>
                       </div>
                       <div class="row spacing1">
-                        <div class="col-md-4 center-block profileName">
+                        <div class="col-md-5 center-block profileName">
                           <p class="text-center lead"><a class="profileLink" href="profile.php?id=<?php echo $user->id; ?>"><?php echo escapeName($user->first_name) . " " . escapeName($user->last_name); ?></a></p>
                         </div>
+
                       </div>
+                      <div class="row marginBottom1">
+                        <div class = "col-md-offset-11 col-md-1">
+                          <a href="http://www.facebook.com" target="_blank">
+                            <img border="0" alt="facebook" src="\images\social\FB-f-Logo__blue_29.png" width="29" height="29">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                     </div>
                     <div class="row spacing2">
                       <div class="col-md-4">

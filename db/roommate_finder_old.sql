@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Apr 16, 2015 at 06:34 PM
+-- Generation Time: Apr 14, 2015 at 04:43 PM
 -- Server version: 5.5.41-log
 -- PHP Version: 5.6.3
 
@@ -30,54 +30,14 @@ CREATE TABLE IF NOT EXISTS `options` (
 `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `question_id` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=82 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `options`
 --
 
 INSERT INTO `options` (`id`, `name`, `question_id`) VALUES
-(1, 'Light', 5),
-(42, 'I''ve answered everything to the best of my ability', 21),
-(43, 'Medium', 5),
-(44, 'Heavy', 5),
-(45, 'Before 10 PM', 7),
-(46, '10-11PM', 7),
-(47, '11-12AM', 7),
-(48, '12-1AM', 7),
-(49, 'After 1AM', 7),
-(50, 'During the Day', 9),
-(51, 'In the Evening', 9),
-(52, 'Late at Night', 9),
-(53, 'Warmer', 11),
-(54, 'Colder', 11),
-(55, 'Always neat and Organized', 12),
-(56, 'Neat most of the time', 12),
-(57, 'Cluttered most of the time', 12),
-(58, 'Always messy and disorganized', 12),
-(59, 'I want TV in my room', 13),
-(60, 'I don''t want TV in my room', 13),
-(61, 'No preference, not interested in splitting costs', 13),
-(62, 'No preference, but willing to split costs', 13),
-(63, 'Often', 14),
-(64, 'Sometimes', 14),
-(65, 'Rarely', 14),
-(66, 'Never', 14),
-(67, 'I''m not comfortable sharing my belongings', 15),
-(68, 'I''m willing to share most things if asked first', 15),
-(69, 'I''m willing to share anything without restrictions', 15),
-(70, 'I like to talk about it', 16),
-(71, 'I tend to become quiet and withdrawn.', 16),
-(72, 'an active lifestyle', 17),
-(73, 'a quiet lifestyle', 17),
-(74, 'Alternative', 18),
-(75, 'Christian', 18),
-(76, 'Classical', 18),
-(77, 'Country', 18),
-(78, 'Hard/Metal', 18),
-(79, 'Rap/Hip Hop', 18),
-(80, 'Rock', 18),
-(81, 'Soft Rock/Pop', 18);
+(1, 'option 1', 1);
 
 -- --------------------------------------------------------
 
@@ -90,34 +50,14 @@ CREATE TABLE IF NOT EXISTS `questions` (
   `question` varchar(500) NOT NULL,
   `tab_id` int(11) NOT NULL,
   `type_id` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `questions`
 --
 
 INSERT INTO `questions` (`id`, `question`, `tab_id`, `type_id`) VALUES
-(1, 'Do you have a medical condition that would necessitate a special housing assignment?', 1, 2),
-(2, 'Are you willing to share your answers to these questions with other students?', 1, 1),
-(3, 'Do you smoke?', 1, 1),
-(4, 'Can you live with someone who smokes?', 1, 2),
-(5, 'What kind of sleeper are you?', 2, 3),
-(6, 'Do you prefer to sleep with the lights on?', 2, 2),
-(7, 'I plan on going to sleep at:', 2, 3),
-(8, 'Do you prefer to study in your room?', 3, 2),
-(9, 'I prefer to study', 3, 3),
-(10, 'Do you need absolute quiet when you study?', 3, 2),
-(11, 'I prefer my room:', 4, 3),
-(12, 'I tend to keep my room and belongings:', 4, 3),
-(13, 'Cable TV:', 4, 3),
-(14, 'How often do you need alone time?', 5, 3),
-(15, 'How comfortable are you sharing your belongings?', 5, 3),
-(16, 'How do you react when something is bothering you?', 5, 3),
-(17, 'I prefer a roommate with:', 6, 3),
-(18, 'My music tastes: ', 6, 4),
-(19, 'Do you currently have a roommate?', 6, 1),
-(20, 'Are you willing to consider moving from your current room?', 6, 1),
-(21, 'Please read and check the box below.', 6, 4);
+(1, 'This is a question about sleeping', 2, 3);
 
 -- --------------------------------------------------------
 
@@ -228,12 +168,12 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `options`
 --
 ALTER TABLE `options`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=82;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `questions`
 --
 ALTER TABLE `questions`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `question_types`
 --

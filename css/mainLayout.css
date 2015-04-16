@@ -13,6 +13,11 @@ html, body
     padding-bottom: 4em;
 }
 
+.marginBottom1
+{
+	margin-bottom: 1em;
+}
+
 .entireWidth
 {
 	width:100%;
@@ -153,9 +158,9 @@ html, body
     opacity: .95;
     position: absolute;
     z-index:    99999;
-    top:        0; 
-    left:       0; 
-    position:   fixed; 
+    top:        0;
+    left:       0;
+    position:   fixed;
 }
 
 #passwordModal
@@ -173,7 +178,7 @@ html, body
 
 .questionTabPanel
 {
-    
+
     height: 40em;
     padding: 2em;
     overflow-y: scroll;
@@ -202,7 +207,7 @@ html, body
 
 /* tab color */
 .questionTypeNav.nav-tabs>li>a {
-  background-color: #333333; 
+  background-color: #333333;
   border-color: #777777;
   color:#fff;
 }
@@ -218,5 +223,3 @@ html, body
 {
     /*position: relative;*/
 }
-
-
