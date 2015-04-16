@@ -1,20 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.7
+-- version 4.2.5
 -- http://www.phpmyadmin.net
 --
--- Host: localhost:3306
--- Generation Time: Apr 16, 2015 at 06:34 PM
--- Server version: 5.5.41-log
--- PHP Version: 5.6.3
+-- Host: localhost:8889
+-- Generation Time: Apr 16, 2015 at 09:05 PM
+-- Server version: 5.5.38
+-- PHP Version: 5.5.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `roommate_finder`
@@ -23,10 +17,31 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `answers`
+--
+
+CREATE TABLE `answers` (
+`id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `question_id` int(11) NOT NULL,
+  `value` int(11) NOT NULL,
+  `preference_rating` int(11) DEFAULT NULL COMMENT 'numbers 1-5'
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `answers`
+--
+
+INSERT INTO `answers` (`id`, `user_id`, `question_id`, `value`, `preference_rating`) VALUES
+(1, 1, 4, 0, 4);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `options`
 --
 
-CREATE TABLE IF NOT EXISTS `options` (
+CREATE TABLE `options` (
 `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `question_id` int(11) NOT NULL
@@ -85,7 +100,7 @@ INSERT INTO `options` (`id`, `name`, `question_id`) VALUES
 -- Table structure for table `questions`
 --
 
-CREATE TABLE IF NOT EXISTS `questions` (
+CREATE TABLE `questions` (
 `id` int(11) NOT NULL,
   `question` varchar(500) NOT NULL,
   `tab_id` int(11) NOT NULL,
@@ -125,7 +140,7 @@ INSERT INTO `questions` (`id`, `question`, `tab_id`, `type_id`) VALUES
 -- Table structure for table `question_types`
 --
 
-CREATE TABLE IF NOT EXISTS `question_types` (
+CREATE TABLE `question_types` (
 `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
@@ -146,7 +161,7 @@ INSERT INTO `question_types` (`id`, `name`) VALUES
 -- Table structure for table `tabs`
 --
 
-CREATE TABLE IF NOT EXISTS `tabs` (
+CREATE TABLE `tabs` (
 `id` int(11) NOT NULL,
   `name` varchar(30) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
@@ -169,7 +184,7 @@ INSERT INTO `tabs` (`id`, `name`) VALUES
 -- Table structure for table `user`
 --
 
-CREATE TABLE IF NOT EXISTS `user` (
+CREATE TABLE `user` (
 `id` int(11) NOT NULL,
   `picture` varchar(50) NOT NULL,
   `password` varchar(64) NOT NULL,
@@ -189,6 +204,12 @@ INSERT INTO `user` (`id`, `picture`, `password`, `first_name`, `last_name`, `acc
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `answers`
+--
+ALTER TABLE `answers`
+ ADD PRIMARY KEY (`id`), ADD KEY `user_id` (`user_id`,`question_id`), ADD KEY `question_id` (`question_id`), ADD KEY `value` (`value`);
 
 --
 -- Indexes for table `options`
@@ -225,6 +246,11 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `answers`
+--
+ALTER TABLE `answers`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `options`
 --
 ALTER TABLE `options`
@@ -254,6 +280,13 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 
 --
+-- Constraints for table `answers`
+--
+ALTER TABLE `answers`
+ADD CONSTRAINT `FK_answers_questions_question_id` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `FK_answers_user_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `options`
 --
 ALTER TABLE `options`
@@ -265,7 +298,3 @@ ADD CONSTRAINT `FK_options_questions_question_id` FOREIGN KEY (`question_id`) RE
 ALTER TABLE `questions`
 ADD CONSTRAINT `FK_questions_question_types_type_id` FOREIGN KEY (`type_id`) REFERENCES `question_types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 ADD CONSTRAINT `FK_questions_tabs_tab_id` FOREIGN KEY (`tab_id`) REFERENCES `tabs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

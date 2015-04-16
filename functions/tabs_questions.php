@@ -3,7 +3,6 @@ require_once 'core/init.php';
 function getTabsWithQuestions()
 {
 	$db = DB::getInstance();
-	$user = new User();
 	$tabs = $db->query("SELECT * FROM tabs");
 	$tabs = $tabs->results();
 	$first = true;
