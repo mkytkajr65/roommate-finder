@@ -11,7 +11,6 @@ body
 html, body
 {
     padding-bottom: 4em;
-    height: 100% !important;
 }
 
 .entireWidth
@@ -213,6 +212,11 @@ html, body
   color: #fff;
   background-color: #822433;
   border: 1px solid #888888;
+}
+
+.container
+{
+    /*position: relative;*/
 }
 
 

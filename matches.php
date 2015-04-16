@@ -1,5 +1,10 @@
 <?php
   require_once 'core/init.php';
+  $user= new User();
+  if(!$user->getIsLoggedIn())
+  {
+    Redirect::to("signin.php");
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">

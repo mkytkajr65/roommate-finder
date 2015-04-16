@@ -50,11 +50,11 @@ if(Input::exists())
 				    <label for="password_sign_in">Password</label>
 				    <input type="password" name="password" class="form-control" id="password_sign_in" placeholder="Password">
 				  </div>
-				  <div class="checkbox">
+				  <!--<div class="checkbox">
 				  <label>
 				    <input type="checkbox">Remember Me
 				  </label>
-				  </div>
+				  </div>-->
 				  <button type="submit" class="btn btn-default">Submit</button>
 				</form>
 			</div>

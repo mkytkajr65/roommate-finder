@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	$(".profileName").each(function(){
 		textlength = $(this).find(".profileLink").text().length;
-		console.log(textlength);
+
 		if(textlength > 0 && textlength < 5) {
 		   $(this).removeClass("col-md-4");
 		    $(this).addClass("col-md-2"); 

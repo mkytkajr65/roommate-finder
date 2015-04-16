@@ -1,5 +1,10 @@
 <?php
   require_once 'core/init.php';
+  $user = new User();
+  if(!$user->getIsLoggedIn())
+  {
+    Redirect::to("signin.php");
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -496,6 +501,6 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/off-canvas-slide.js"></script>
     <script src="js/preferenceSlider.js"></script>
-    <script src="js/on_off_switch.js"></script>
+    <script src="js/saveAnswers.js"></script>
   </body>
 </html>

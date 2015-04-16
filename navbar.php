@@ -19,7 +19,11 @@
         <li <?php echo ($pageChecker->isPage("matches.php")) ? "class='active'" : ''; ?>><a href="matches.php">Matches</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li <?php echo ($pageChecker->isPage("administrator.php")) ? "class='active'" : ''; ?>><a href="administrator.php">Administrative Access</a></li>
+        <?php
+          if($user->account_type=="admin")
+          {
+        ?>
+        <li <?php echo ($pageChecker->isPage("administrator.php")) ? "class='active'" : ''; ?>><a href="administrator.php">Administrative Access</a></li><?php } ?>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $user->first_name . " " . $user->last_name; ?><span class="caret neon"></span></a>
           <ul class="dropdown-menu" role="menu">

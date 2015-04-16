@@ -10,9 +10,9 @@
       $user = $currentUser;
     }
   }
-  if(!$user->exists())
+  if(!$user->getIsLoggedIn())
   {
-    Redirect::to('404');
+    Redirect::to('signin.php');
   }
 ?>
 <!DOCTYPE html>
@@ -54,7 +54,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="row">
-              <div class="col-md-10 center-block" id="matchArea">
+              <div class="col-md-10 center-block" id="profileArea">
                 <div class="row spacing2"><!--Large Widget Starts here-->
                   <div class="col-md-8 largeRankingWidget center-block">
                     <div class="topBannerForWidget">
@@ -63,23 +63,11 @@
                       </div>
                       <div class="row spacing1">
                         <div class="col-md-4 center-block profileName">
-                          <p class="text-center lead"><a class="profileLink" href="profile.php?id=<?php echo $user->id; ?>"><?php echo $user->first_name . " " . $user->last_name; ?></a></p>
+                          <p class="text-center lead"><a class="profileLink" href="profile.php?id=<?php echo $user->id; ?>"><?php echo escapeName($user->first_name) . " " . escapeName($user->last_name); ?></a></p>
                         </div>
                       </div>
                     </div>
                     <div class="row spacing2">
-                      <div class="col-md-4">
-                        <!--<div class="row">
-                          <div class="col-md-12">
-                            <h4 class="text-center">Match Rating</h4>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-md-12 paddingTop2">
-                            <div class="c100 p89 large center"><span>89%</span><div class="slice"><div class="bar"></div><div class="fill"></div></div></div>
-                          </div>
-                        </div>-->
-                      </div>
                       <div class="col-md-4">
                         <div class="row">
                           <div class="col-md-12">
@@ -113,8 +101,6 @@
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="row spacing2">
                       <div class="col-md-4">
                         <div class="row">
                           <div class="col-md-12">
@@ -132,6 +118,8 @@
                           </div>
                         </div>
                       </div>
+                    </div>
+                    <div class="row spacing2">
                       <div class="col-md-4">
                         <div class="row">
                           <div class="col-md-12">

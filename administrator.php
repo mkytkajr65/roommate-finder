@@ -191,5 +191,6 @@
     <script src="js/editButton.js"></script>
     <script src="js/addTabs.js"></script>
     <script src="js/createQuestion.js"></script>
+    <script src="js/admin_delete_question.js"></script>
   </body>
 </html>

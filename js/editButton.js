@@ -75,7 +75,7 @@ $(document).on('click', '.saveButton' ,function(){
 	//remove textarea and replace with text
 	var qTextNode =  $(this).parentsUntil(".aQuestion").parent().find(".questionText > p");
 	qTextNode.empty();
-	console.log(qText);
+
 	qTextNode.append(qText);
 
 	//save text in database
