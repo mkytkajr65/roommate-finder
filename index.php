@@ -1,5 +1,6 @@
 <?php
   require_once 'core/init.php';
+  require_once 'functions/tabs_questions.php';
   $user = new User();
   if(!$user->getIsLoggedIn())
   {
@@ -53,16 +54,12 @@
 
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs noselect questionTypeNav" role="tablist">
-                      <li role="presentation" class="active"><a href="#basics" aria-controls="basics" role="tab" data-toggle="tab">Basics</a></li>
-                      <li role="presentation"><a href="#sleeping" aria-controls="profile" role="tab" data-toggle="tab">Sleeping</a></li>
-                      <li role="presentation"><a href="#studying" aria-controls="studying" role="tab" data-toggle="tab">Studying</a></li>
-                      <li role="presentation"><a href="#room" aria-controls="room" role="tab" data-toggle="tab">Room</a></li>
-                      <li role="presentation"><a href="#personal" aria-controls="personal" role="tab" data-toggle="tab">Personal</a></li>
-                      <li role="presentation"><a href="#lifestyle" aria-controls="lifestyle" role="tab" data-toggle="tab">Lifestyle</a></li>
+                      <?php getTabs(); ?>
                     </ul>
 
                     <!-- Tab panes -->
                     <div class="tab-content">
+                        <?php getTabsWithQuestions(); ?><!--
                         <div role="tabpanel" class="tab-pane active" id="basics">
                           <form method="POST" action="">
                             <div class="row studentQuestion">
@@ -421,8 +418,6 @@
                                       <div class="container-fluid">
                                         <div class="col-md-12 answerInput">
                                               <div class="form-group">
-                                                <label for="sel1">I like:</label>
-                                                <div class="form-group">
                                                   <input type="checkbox"> Alternative
                                                   <input type="checkbox"> Christian
                                                   <input type="checkbox"> Classical
@@ -431,7 +426,6 @@
                                                   <input type="checkbox"> Rap/Hip-Hop
                                                   <input type="checkbox"> Rock
                                                   <input type="checkbox"> Soft Rock/Pop
-                                                </div>
                                               </div>
                                         </div>
                                       </div>
@@ -476,7 +470,7 @@
                               </div>
                             </div>
                           </form>
-                        </div>
+                        </div>-->
                     </div>
 
                   </div>
