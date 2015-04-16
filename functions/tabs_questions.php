@@ -6,7 +6,6 @@ function getTabsWithQuestions()
 	$tabs = $db->query("SELECT * FROM tabs");
 	$tabs = $tabs->results();
 	$first = true;
-	$qnum = 1;
 	foreach ($tabs as $tab) {
 		$questions = $db->query("SELECT * FROM questions WHERE tab_id = ?", array($tab->id));
 		$questions = $questions->results();
@@ -22,7 +21,7 @@ function getTabsWithQuestions()
 			echo '<div role="tabpanel" class="tab-pane fade"';
 		}
 		echo 'id="'. escapeName($tab->name) .'">';
-		echo '<form method="POST" action="">
+		echo '<form method="POST" name="formSubmit" action="">
                             <div class="row studentQuestion">
                               <div class="col-md-12">
                               <ol>';
@@ -34,8 +33,9 @@ function getTabsWithQuestions()
         	{
         		echo '<div class="col-md-6">
                           <div class="onoffswitch">
-                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="Q'.$qnum.'">
-                            <label class="onoffswitch-label" for="Q'.$qnum.'">
+                          	<input type="hidden" name="Q'.$question->id.'" value="0">
+                            <input type="checkbox" name="Q'.$question->id.'" value="1" class="onoffswitch-checkbox" id="Q'.$question->id.'">
+                            <label class="onoffswitch-label" for="Q'.$question->id.'">
                                 <span class="onoffswitch-inner"></span>
                                 <span class="onoffswitch-switch"></span>
                             </label>
@@ -46,8 +46,9 @@ function getTabsWithQuestions()
         	{
         		echo '<div class="col-md-5">
 	                      <div class="onoffswitch">
-	                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="Q'.$qnum.'">
-	                        <label class="onoffswitch-label" for="Q'.$qnum.'">
+	                      	<input type="hidden" name="Q'.$question->id.'" value="0">
+	                        <input type="checkbox" name="Q'.$question->id.'" value="1" class="onoffswitch-checkbox" id="Q'.$question->id.'">
+	                        <label class="onoffswitch-label" for="Q'.$question->id.'">
 	                            <span class="onoffswitch-inner"></span>
 	                            <span class="onoffswitch-switch"></span>
 	                        </label>
@@ -68,11 +69,12 @@ function getTabsWithQuestions()
         		$options = $db->query("SELECT * FROM options WHERE question_id = ?", array($question->id));
         		$options = $options->results();
         		echo '<div class="form-group">
-                        <select class="form-control" id="sel'.$qnum.'">';
+                        <select class="form-control" name="Q'.$question->id.'">';
                 $valNum = 0;
                 foreach ($options as $option)
                 {
                 	echo '<option value="'.$valNum.'">'.escapeName($option->name).'</option>';
+                	$valNum++;
                 }
                 echo '</select></div>';
         	}
@@ -82,14 +84,14 @@ function getTabsWithQuestions()
         		$options = $options->results();
         		echo '<div class="form-group">';
         		$valNum = 0;
-        		foreach ($options as  $option)
+        		foreach ($options as  $option)//QC denotes question with checkbox
         		{
-        			echo '<input type="checkbox" value="'.$valNum.'"> '.escapeName($option->name).'<br>';
+        			echo '<input type="checkbox" name="QC'.$question->id.'" value="'.$valNum.'"> '.escapeName($option->name).'<br>';
+        			$valNum++;
         		}
 	            echo'</div>';
         	}
         	echo '</div></div></li>';
-        	$qnum++;
         }
         echo '</ol></div></div></form></div>';
     }                                  
