@@ -1,5 +1,6 @@
 <?php
   require_once 'core/init.php';
+  require_once 'functions/get_profile.php';
   $user = new User(Input::get('id'));
   $currentUser = new User();
   if($currentUser->getIsLoggedIn())
@@ -50,6 +51,9 @@
     ?>
     <?php include("off-canvas-nav.php"); ?>
       <div class="pushContainer"></div>
+      <div class="container">
+        <?php getAnswersForProfile($user->id); ?>
+      </div>
        <div class="container">
         <div class="row">
           <div class="col-md-12">
