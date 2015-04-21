@@ -1,5 +1,6 @@
 <?php
   require_once 'core/init.php';
+  require_once 'functions/get_profile.php';
   $user= new User();
   if(!$user->getIsLoggedIn())
   {
@@ -62,130 +63,7 @@
                   </select>
                 </div>
               </div>
-              <div class="row spacing2"><!--Large Widget Starts here-->
-                <div class="col-md-8 largeRankingWidget center-block">
-                  <div class="topBannerForWidget">
-                    <div class="row">
-                    <div class="col-md-10 center-block">
-                    <div class="row paddingTop1">
-                      <div class="profilePic col-md-3 center-block"></div>
-                    </div>
-                    <div class="row spacing1">
-                      <div class="col-md-5 center-block profileName">
-                        <p class="text-center lead"><a class="profileLink" href="profile.php?id=<?php echo $user->id; ?>"><?php echo escapeName($user->first_name) . " " . escapeName($user->last_name); ?></a></p>
-                      </div>
-
-                    </div>
-                    <div class="row">
-                      <div class = "text-center lead">
-                        <a href="http://www.facebook.com" target="_blank">
-                          <img border="0" alt="facebook" src="\images\social\FB-f-Logo__blue_29.png" width="29" height="29">
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                  </div>
-                  <div class="row spacing2">
-                    <div class="col-md-4">
-                      <div class="row">
-                        <div class="col-md-12">
-                          <h4 class="text-center">Match Rating</h4>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-12 paddingTop2">
-                          <div class="c100 p89 large center"><span>89%</span><div class="slice"><div class="bar"></div><div class="fill"></div></div></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="row">
-                        <div class="col-md-12">
-                          <h4 class="text-center">Sleeping</h4>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-12">
-                          <ul class="noPadding">
-                            <li>Sleeper Type: <strong>light</strong></li>
-                            <li>Sleeps with <strong>lights on</strong></li>
-                            <li>Goes to sleep <strong>before 10pm</strong></li>
-                            <li>Wakes up <strong>before 6am</strong></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="row">
-                        <div class="col-md-12">
-                          <h4 class="text-center">Studying</h4>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-12">
-                          <ul class="noPadding">
-                            <li>Prefers to <strong>not</strong> study in room</li>
-                            <li>Studies <strong>late at night</strong></li>
-                            <li><strong>Does not </strong> require absolute quiet</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row spacing2">
-                    <div class="col-md-4">
-                      <div class="row">
-                        <div class="col-md-12">
-                          <h4 class="text-center">Room</h4>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-12">
-                          <ul class="paddingHalf">
-                            <li><strong>Light</strong> sleeper</li>
-                            <li>Prefers room to be <strong>colder</strong></li>
-                            <li><strong>Always neat and organized</strong></li>
-                            <li><strong>Willing to have and split the cost for </strong>cable tv</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="row">
-                        <div class="col-md-12">
-                          <h4 class="text-center">Personal</h4>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-12">
-                          <ul class="paddingHalf">
-                            <li><strong>Sometimes</strong> needs alone time</li>
-                            <li><strong>Comfortable</strong> with sharing belongings</li>
-                            <li><strong>neat and organized</strong></li>
-                            <li><strong>Quiet and withdrawn</strong> when bothered</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="row">
-                        <div class="col-md-12">
-                          <h4 class="text-center">Lifestyle</h4>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-12">
-                          <ul class="noPadding">
-                            <li>Prefers roommate with <strong>active lifestyle</strong></li>
-                            <li>Music tastes are: <strong>Rap/Hiphop</strong>, <strong>Rock</strong> and <strong>Christian</strong></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div><!--Large widget ends here-->
+                <?php getMatchesForProfile($user->id); ?>
             </div>
           </div>
         </div>

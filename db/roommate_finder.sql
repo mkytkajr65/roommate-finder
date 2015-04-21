@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Apr 16, 2015 at 08:08 PM
+-- Generation Time: Apr 21, 2015 at 10:14 PM
 -- Server version: 5.5.41-log
 -- PHP Version: 5.6.3
 
@@ -132,35 +132,36 @@ CREATE TABLE IF NOT EXISTS `questions` (
 `id` int(11) NOT NULL,
   `question` varchar(500) NOT NULL,
   `tab_id` int(11) NOT NULL,
-  `type_id` int(11) NOT NULL
+  `type_id` int(11) NOT NULL,
+  `public` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
 
 --
 -- Dumping data for table `questions`
 --
 
-INSERT INTO `questions` (`id`, `question`, `tab_id`, `type_id`) VALUES
-(1, 'Do you have a medical condition that would necessitate a special housing assignment?', 1, 2),
-(2, 'Are you willing to share your answers to these questions with other students?', 1, 1),
-(3, 'Do you smoke?', 1, 1),
-(4, 'Can you live with someone who smokes?', 1, 2),
-(5, 'What kind of sleeper are you?', 2, 3),
-(6, 'Do you prefer to sleep with the lights on?', 2, 2),
-(7, 'I plan on going to sleep at:', 2, 3),
-(8, 'Do you prefer to study in your room?', 3, 2),
-(9, 'I prefer to study', 3, 3),
-(10, 'Do you need absolute quiet when you study?', 3, 2),
-(11, 'I prefer my room:', 4, 3),
-(12, 'I tend to keep my room and belongings:', 4, 3),
-(13, 'Cable TV:', 4, 3),
-(14, 'How often do you need alone time?', 5, 3),
-(15, 'How comfortable are you sharing your belongings?', 5, 3),
-(16, 'How do you react when something is bothering you?', 5, 3),
-(17, 'I prefer a roommate with:', 6, 3),
-(18, 'My music tastes: ', 6, 4),
-(19, 'Do you currently have a roommate?', 6, 1),
-(20, 'Are you willing to consider moving from your current room?', 6, 1),
-(21, 'Please read and check the box below.', 6, 4);
+INSERT INTO `questions` (`id`, `question`, `tab_id`, `type_id`, `public`) VALUES
+(1, 'Do you have a medical condition that would necessitate a special housing assignment?', 1, 2, 1),
+(2, 'Are you willing to share your answers to these questions with other students?', 1, 1, 1),
+(3, 'Do you smoke?', 1, 1, 1),
+(4, 'Can you live with someone who smokes?', 1, 2, 1),
+(5, 'What kind of sleeper are you?', 2, 3, 1),
+(6, 'Do you prefer to sleep with the lights on?', 2, 2, 1),
+(7, 'I plan on going to sleep at:', 2, 3, 1),
+(8, 'Do you prefer to study in your room?', 3, 2, 1),
+(9, 'I prefer to study', 3, 3, 1),
+(10, 'Do you need absolute quiet when you study?', 3, 2, 1),
+(11, 'I prefer my room:', 4, 3, 1),
+(12, 'I tend to keep my room and belongings:', 4, 3, 1),
+(13, 'Cable TV:', 4, 3, 1),
+(14, 'How often do you need alone time?', 5, 3, 1),
+(15, 'How comfortable are you sharing your belongings?', 5, 3, 1),
+(16, 'How do you react when something is bothering you?', 5, 3, 1),
+(17, 'I prefer a roommate with:', 6, 3, 1),
+(18, 'My music tastes: ', 6, 4, 1),
+(19, 'Do you currently have a roommate?', 6, 1, 1),
+(20, 'Are you willing to consider moving from your current room?', 6, 1, 1),
+(21, 'Please read and check the box below.', 6, 4, 0);
 
 -- --------------------------------------------------------
 
