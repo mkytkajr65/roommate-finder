@@ -277,6 +277,38 @@ function getMatchesForProfile($profile_id)
 
 }
 
+function compareUsers($user1_id, $user2_id)
+{
+	$db = DB::getInstance();
+	//get the users
+	$user1 = new User($user1_id);
+	$user2 = new User($user2_id);
 
+	//get the questions
+	$questions = $db->query("SELECT * FROM questions");
+	$questions = $questions->results();
+	$sum = 0;
+	$n = 0;
+
+	//for each question
+	foreach($questions as $question)
+	{
+		if($question->type_id != 4)//checkboxes need to be handled differently
+		{
+			$n++;
+			//get their answers
+			$answers1 = $db->query("SELECT * FROM answers WHERE user_id = ".$user1_id." AND question_id = ".escapeName($question->id)."");
+			$answers1 = $answers1->results;
+			$answers2 = $db->query("SELECT * FROM answers WHERE user_id = ".$user2_id." AND question_id = ".escapeName($question->id)."");
+			$answers2 = $answers2->results;
+			if($answers1->preference_rating == NULL)$sum = $sum + (($answers1->value - $answers2->value)*($answers1->value - $answers2->value));
+			else $sum = $sum + ($answers1->preference_rating + $answers2->preference_rating)*(($answers1->value -$answers2->value)*($answers1->value -$answers2->value));
+
+		}
+
+	}
+	$match_value = $sum/$n;
+	echo $match_value;
+}
 
 ?>
