@@ -6,11 +6,11 @@ function getTabsWithQuestions()
 	$tabs = $db->query("SELECT * FROM tabs");
 	$tabs = $tabs->results();
 	$first = true;
+	$user = new User();
 	foreach ($tabs as $tab) {
 		$questions = $db->query("SELECT * FROM questions WHERE tab_id = ?", array($tab->id));
 		$questions = $questions->results();
 
-		//print_r($questions);
 		if($first)
 		{
 			$first = false;
@@ -33,9 +33,21 @@ function getTabsWithQuestions()
         	{
         		echo '<div class="col-md-6">
                           <div class="onoffswitch">
-                          	<input type="hidden" name="Q'.$question->id.'" value="0">
-                            <input type="checkbox" name="Q'.$question->id.'" value="1" class="onoffswitch-checkbox" id="Q'.$question->id.'">
-                            <label class="onoffswitch-label" for="Q'.$question->id.'">
+                          	<input type="hidden" name="Q_'.$question->id.'" value="0">
+                            <input type="checkbox" name="Q_'.$question->id.'"
+                             value="1" class="onoffswitch-checkbox"
+                              id="Q_'.$question->id.'"';
+                $selected = $db->query("SELECT * FROM answers
+                WHERE user_id = ? AND question_id = ?", array($user->id, $question->id));
+                if($selected->count())
+                {
+                	$selected = $selected->results();
+
+                	
+                	if($selected[0]->value == 1) echo 'checked';
+                }
+                echo             '>
+                            <label class="onoffswitch-label" for="Q_'.$question->id.'">
                                 <span class="onoffswitch-inner"></span>
                                 <span class="onoffswitch-switch"></span>
                             </label>
@@ -46,9 +58,19 @@ function getTabsWithQuestions()
         	{
         		echo '<div class="col-md-5">
 	                      <div class="onoffswitch">
-	                      	<input type="hidden" name="Q'.$question->id.'" value="0">
-	                        <input type="checkbox" name="Q'.$question->id.'" value="1" class="onoffswitch-checkbox" id="Q'.$question->id.'">
-	                        <label class="onoffswitch-label" for="Q'.$question->id.'">
+	                      	<input type="hidden" name="Q_'.$question->id.'" value="0">
+	                        <input type="checkbox" name="Q_'.$question->id.'" value="1" class="onoffswitch-checkbox" id="Q_'.$question->id.'"';
+	            $selected = $db->query("SELECT * FROM answers
+                WHERE user_id = ? AND question_id = ?", array($user->id, $question->id));
+                if($selected->count())
+                {
+                	$selected = $selected->results();
+
+                	
+                	if($selected[0]->value == 1) echo 'checked';
+                }
+	            echo '>
+	                        <label class="onoffswitch-label" for="Q_'.$question->id.'">
 	                            <span class="onoffswitch-inner"></span>
 	                            <span class="onoffswitch-switch"></span>
 	                        </label>
@@ -61,19 +83,48 @@ function getTabsWithQuestions()
 	                      </div>
 	                      <div class="sliderValue" class="col-md-4"></div>
 	                    </div>
-	                    <input class="preferenceSlider" type="range" value="1"  min="1" max="5" />
-	                  </div>';
+	                    <input class="preferenceSlider" name="QPS_'.$question->id.'" type="range" value="';
+	            $selected = $db->query("SELECT * FROM answers
+                WHERE user_id = ? AND question_id = ?", array($user->id, $question->id));
+                if($selected->count())
+                {
+                	$selected = $selected->results();
+
+                	
+                	if($selected[0]->preference_rating != 'NULL') 
+            		{
+            			echo $selected[0]->preference_rating;
+            		}
+            		else
+            		{
+            			echo '1';
+            		}
+                }
+                else
+                {
+                    echo '1';
+                }
+	            echo '"  min="1" max="5" />
+	                  </div>';//QPS for slider denotes Question Preference Slider
         	}
         	else if($question->type_id == "3")//selection
         	{
         		$options = $db->query("SELECT * FROM options WHERE question_id = ?", array($question->id));
         		$options = $options->results();
         		echo '<div class="form-group">
-                        <select class="form-control" name="Q'.$question->id.'">';
+                        <select class="form-control" name="Q_'.$question->id.'">';
                 $valNum = 0;
                 foreach ($options as $option)
                 {
-                	echo '<option value="'.$valNum.'">'.escapeName($option->name).'</option>';
+                	echo '<option value="'.$valNum.'"';
+                	$selected = $db->query("SELECT * FROM answers
+                	WHERE user_id = ? AND question_id = ?", array($user->id, $question->id));
+                    if($selected->count())
+                    {
+                        $selected = $selected->first();
+                        if($selected->value == $option->value_index-1)echo 'selected';
+                    }
+                	echo '>'.escapeName($option->name).'</option>';
                 	$valNum++;
                 }
                 echo '</select></div>';
@@ -86,7 +137,11 @@ function getTabsWithQuestions()
         		$valNum = 0;
         		foreach ($options as  $option)//QC denotes question with checkbox
         		{
-        			echo '<input type="checkbox" name="QC'.$question->id.'" value="'.$valNum.'"> '.escapeName($option->name).'<br>';
+        			echo '<input type="checkbox" name="QC_'.$question->id.'" value="'.$valNum.'"';
+        			$row = $db->query("SELECT * FROM answers WHERE user_id = ?
+        			AND question_id = ? AND value = ?", array($user->id, $question->id, $option->value_index-1));
+        			if($row->count())echo "checked";
+        			echo '> '.escapeName($option->name).'<br>';
         			$valNum++;
         		}
 	            echo'</div>';

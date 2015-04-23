@@ -84,5 +84,6 @@
     <script src="js/off-canvas-slide.js"></script>
     <script src="js/preferenceSlider.js"></script>
     <script src="js/saveAnswers.js"></script>
+    <script src="js/tabReload.js"></script>
   </body>
 </html>
