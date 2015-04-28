@@ -144,6 +144,13 @@ function getMatchesForProfile($profile_id)
   $questions = $questions->results();
 	$user = new User($profile_id);
 
+	$public_val = $db->query("SELECT * FROM answers WHERE question_id=2 AND user_id = ".$profile_id."");
+	$public_val = $public_val->results();
+	$public = $public_val[0]->value;
+	echo $public;
+
+	echo '<br>';
+
 	echo '<div class="row spacing2"><!--Large Widget Starts here-->
 		<div class="col-md-8 largeRankingWidget center-block">
 			<div class="topBannerForWidget">
@@ -187,6 +194,7 @@ function getMatchesForProfile($profile_id)
 				</div>
 			</div>';
 			$firstsection = true;
+	if($public == 1)
 	foreach ($tabs as $tab) {
 		if($firstsection != true)
 			{
