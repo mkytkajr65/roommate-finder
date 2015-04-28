@@ -1,6 +1,7 @@
 <?php
   require_once 'core/init.php';
   require_once 'functions/get_profile.php';
+  require_once 'functions/matching_algorithm.php';
   $user= new User();
   if(!$user->getIsLoggedIn())
   {
@@ -38,10 +39,7 @@
           error_reporting(-1);
       */
       include("navbar.php");
-      /*if(true)
-      {
-        include("signin.php");
-      }*/
+
       include("off-canvas-nav.php");
     ?>
     <div class="pushContainer"></div>
@@ -63,6 +61,7 @@
                   </select>
                 </div>
               </div>
+                <?php getMatchScore(1, 2) ?>
                 <?php getMatchesForProfile($user->id); ?>
             </div>
           </div>

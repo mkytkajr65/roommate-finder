@@ -6,8 +6,10 @@ function getAnswersForProfile($profile_id)
 	$tabs = $db->query("SELECT * FROM tabs");
 	$tabs = $tabs->results();
 
-  $questions = $db->query("SELECT * FROM questions", array($tab->id));
+
+  $questions = $db->query("SELECT * FROM questions");
   $questions = $questions->results();
+
 	$user = new User($profile_id);
 
 	echo '<div class="row spacing2"><!--Large Widget Starts here-->
@@ -19,10 +21,9 @@ function getAnswersForProfile($profile_id)
 					<div class="profilePic col-md-3 center-block"></div>
 				</div>
 				<div class="row spacing1">
-					<div class="col-md-5 center-block profileName">
+					<div class="col-md-5 col-xs-6 center-block profileName">
 						<p class="text-center lead"><a class="profileLink" href="profile.php?id='.$profile_id.'">'.escapeName($user->first_name).' '.escapeName($user->last_name).'</a></p>
 					</div>
-
 				</div>
 				<div class="row">
 					<div class = "text-center lead">
@@ -71,8 +72,8 @@ function getAnswersForProfile($profile_id)
 	    {
 				if($question->public)
 				{
-		      $answers = $db->query("SELECT * FROM answers WHERE question_id = ? AND user_id = ".$profile_id."", array($question->id));
-		      $answers = $answers->results();
+				      $answers = $db->query("SELECT * FROM answers WHERE question_id = ? AND user_id = ".$profile_id."", array($question->id));
+				      $answers = $answers->results();
 
 
 					if($question->type_id != 1 && $question->type_id != 2)
@@ -139,7 +140,7 @@ function getMatchesForProfile($profile_id)
 	$tabs = $db->query("SELECT * FROM tabs");
 	$tabs = $tabs->results();
 
-  $questions = $db->query("SELECT * FROM questions", array($tab->id));
+  $questions = $db->query("SELECT * FROM questions");
   $questions = $questions->results();
 	$user = new User($profile_id);
 
@@ -297,9 +298,9 @@ function compareUsers($user1_id, $user2_id)
 		{
 			$n++;
 			//get their answers
-			$answers1 = $db->query("SELECT * FROM answers WHERE user_id = ".$user1_id." AND question_id = ".escapeName($question->id)."");
+			$answers1 = $db->query("SELECT * FROM answers WHERE user_id = ? AND question_id = ?", array($user1_id, $question->id));
 			$answers1 = $answers1->results;
-			$answers2 = $db->query("SELECT * FROM answers WHERE user_id = ".$user2_id." AND question_id = ".escapeName($question->id)."");
+			$answers2 = $db->query("SELECT * FROM answers WHERE user_id = ? AND question_id = ?", array($user2_id, $question->id));
 			$answers2 = $answers2->results;
 			if($answers1->preference_rating == NULL)$sum = $sum + (($answers1->value - $answers2->value)*($answers1->value - $answers2->value));
 			else $sum = $sum + ($answers1->preference_rating + $answers2->preference_rating)*(($answers1->value -$answers2->value)*($answers1->value -$answers2->value));

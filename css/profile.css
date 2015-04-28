@@ -30,11 +30,12 @@
 
 .profilePic
 {
-	height: 8em;
+	height: 3em;
+	width: 3em; 
 	background-image: url("../images/default.jpg");
 	background-size:cover;
-	
-	border: 2px solid white;
+	background-position: 2px;
+	border: 2px solid black;
 }
 
 .topBannerForWidget
