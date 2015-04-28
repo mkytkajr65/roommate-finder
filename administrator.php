@@ -1,5 +1,6 @@
 <?php
   require_once 'core/init.php';
+  require_once 'functions/get_tabs.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,10 +33,7 @@
           error_reporting(-1);
       */
       include("navbar.php");
-      /*if(true)
-      {
-        include("signin.php");
-      }*/
+
     ?>
     <?php include("off-canvas-nav.php"); ?>
       <div class="pushContainer"></div>
@@ -50,7 +48,6 @@
                     <ul class="nav nav-tabs noselect questionTypeNav" role="tablist">
                       <li role="presentation" class="active"><a href="#tabs" aria-controls="basics" role="tab" data-toggle="tab">Student Tabs</a></li>
                       <li role="presentation"><a href="#questions" aria-controls="profile" role="tab" data-toggle="tab">Student Questions</a></li>
-                      <li role="presentation"><a href="#adjust_matching" aria-controls="profile" role="tab" data-toggle="tab">Adjust Matching Algorithm</a></li>
                     </ul>
 
                     <div class="tab-content">
@@ -58,12 +55,7 @@
                             <div class="row adminPanel">
                               <div id="tabEntryContainer" class="col-md-12">
                                 <ol id="tabEntryList">
-                                  <li><div class="tabEntry">basics<span class="tabEntry_x">x</span></div></li>
-                                  <li><div class="tabEntry">sleeping<span class="tabEntry_x">x</div></li>
-                                  <li><div class="tabEntry">studying<span class="tabEntry_x">x</div></li>
-                                  <li><div class="tabEntry">room<span class="tabEntry_x">x</div></li>
-                                  <li><div class="tabEntry">personal<span class="tabEntry_x">x</div></li>
-                                  <li><div class="tabEntry">lifestyle<span class="tabEntry_x">x</div></li>
+                                  <?php getTabs(); ?>
                                 </ol>
                               </div>
                             </div>
@@ -164,15 +156,10 @@
                                   </div>
                                     </div><!--Particular Tab-->
                                   </div>
-                                  
-                                  
                                 </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="adjust_matching">
-                          <p>matching</p>
                         </div>
                     </div>
                   </div>

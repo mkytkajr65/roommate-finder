@@ -61,7 +61,7 @@
                   </select>
                 </div>
               </div>
-                <?php getMatchScore(1, 2) ?>
+                <?php getMatchScore(2, 4) ?>
                 <?php getMatchesForProfile($user->id); ?>
             </div>
           </div>

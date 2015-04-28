@@ -15,7 +15,17 @@ $(document).on('enterKeyTabs','#tabEntryAdd',function(e){
 
 
 		//save new tab to database
-
+		var data = {
+			tab_name: inputFieldText
+		};
+		$.ajax({
+				type: 'POST',
+				url: 'ajax/saveTabs.php',
+				data: data, 
+				success: function(data) {
+					console.log(data);
+				}
+			});
 
 		$(this).val("");
 	}
@@ -24,6 +34,19 @@ $(document).on('enterKeyTabs','#tabEntryAdd',function(e){
 $(document).on('click', '.tabEntry_x', function(){
 
 	//delete tab from database
+	var tab = $(this).parent().text().slice(0,-1);
+
+	var data = {
+			tab_name: tab
+		};
+		$.ajax({
+				type: 'POST',
+				url: 'ajax/deleteTabs.php',
+				data: data, 
+				success: function(data) {
+					console.log(data);
+				}
+			});
 
 	$(this).parent().remove();
 });
