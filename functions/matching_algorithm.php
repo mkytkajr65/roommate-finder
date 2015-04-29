@@ -70,10 +70,11 @@ function getMatchScore($user_1, $user_2)
 		}
 	}
 
-	echo $matches . "<br>";
-	echo $totalQuestions . "<br>";
+	//echo $matches . "<br>";
+	//echo $totalQuestions . "<br>";
 	$percentage = ($matches / $totalQuestions) * 100;
-	echo $percentage;
+	//echo $percentage;
+	return $percentage;
 }
 
 ?>

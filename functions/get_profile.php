@@ -1,5 +1,6 @@
 <?php
 require_once 'core/init.php';
+require_once 'functions/matching_algorithm.php';
 function getAnswersForProfile($profile_id)
 {
 	$db = DB::getInstance();
@@ -147,7 +148,7 @@ function getMatchesForProfile($profile_id)
 	$public_val = $db->query("SELECT * FROM answers WHERE question_id=2 AND user_id = ".$profile_id."");
 	$public_val = $public_val->results();
 	$public = $public_val[0]->value;
-	echo $public;
+
 
 	echo '<br>';
 
@@ -283,6 +284,40 @@ function getMatchesForProfile($profile_id)
 </div><!--Large widget ends here-->';
 
 
+
+}
+
+function listMatches($profile_id)
+{
+
+	$db = DB::getInstance();
+	//get the users
+	$profile = new User($profile_id);
+
+	$users = $db->query("SELECT * FROM user");
+	$users = $users->results();
+
+	$userarray = array();
+	foreach($users as $user)
+	{
+		echo $user->id;
+		echo '<br>';
+		if($user->id != $profile_id) array_push($userarray, getMatchScore($user->id, $profile_id));
+	}
+
+	echo '<br>';
+	foreach($userarray as $score)
+	{
+		echo $score;
+		echo '<br>';
+	}
+	arsort($userarray);
+	echo '<br>';
+	foreach($userarray as $score)
+	{
+		echo $score;
+		echo '<br>';
+	}
 
 }
 
