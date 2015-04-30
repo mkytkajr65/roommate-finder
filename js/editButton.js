@@ -11,7 +11,7 @@ $(document).on('click', '.editButton' ,function(){
 	for(var x in optionValues)
 	{
 		selectValues += "<option value='"+ x +"'"
-		if(x == qTypeDataType)
+		if(x == qTypeDataType-1)
 		{
 			selectValues += "selected='selected'";
 		}
@@ -30,7 +30,7 @@ $(document).on('click', '.editButton' ,function(){
 		});
 	}
 	//console.log(qTypeDataType);
-	if(qTypeDataType == "2" || qTypeDataType == "3")//needs to check database for acceptable values
+	if(qTypeDataType == "3" || qTypeDataType == "4")//needs to check database for acceptable values
 	{
 		var optionsAdd = $(this).parent().parent().find(".addOptions");
 		optionsAdd.empty();
@@ -39,15 +39,16 @@ $(document).on('click', '.editButton' ,function(){
 	$(this).removeClass("editButton");
 	$(this).addClass("saveButton");
 	$(this).text("save");
-	//console.log(optionsList.html());
 });
 
 $(document).on('change', '.selectEditType' ,function(){
 	var value = $(this).find("option:selected").val();
+	value++;
+	var q_id = $(this).parentsUntil(".aQuestion").parent().children("#qid").data("question_id");
 	$(this).parent().data("type",value);
 	var optionsAdd = $(this).parentsUntil(".aQuestion").parent().find(".addOptions");
 	var thisList = $(this).parentsUntil(".aQuestion").find(".optionEntryList");
-	if(value == "2" || value == "3")//needs to check database for acceptable values
+	if(value == "3" || value == "4")//needs to check database for acceptable values
 	{
 		optionsAdd.empty();
 		optionsAdd.append("<input class='addOptionsInput' type='text' value='' placeholder='add options...' >");
@@ -56,6 +57,15 @@ $(document).on('change', '.selectEditType' ,function(){
 	{
 		alert("Are you sure you want to change the question type? The options will be deleted!");
 		//delete options from database for question if there are any
+
+		var data = {
+			q_id: q_id
+		};
+		$.ajax({
+				type: 'POST',
+				url: 'ajax/deleteAllOptions.php',
+				data: data
+			});
 
 		var none = "<li><div class='novalue'>none</div></li>";
 		thisList.empty();
@@ -80,13 +90,37 @@ $(document).on('click', '.saveButton' ,function(){
 
 	//save text in database
 
+	var q_id = $(this).parentsUntil(".aQuestion").parent().children("#qid").data("question_id");
+
+
+	var data = {
+			text: qText,
+			question_id: q_id
+		};
+	$.ajax({
+			type: 'POST',
+			url: 'ajax/saveQuestionText.php',
+			data: data
+		});
+
+
 	//get text from selected option
 	var selectedOption = $(this).parentsUntil(".aQuestion").find(".selectEditType option:selected").text();
+	var qTypeId = $(this).parentsUntil(".aQuestion").find(".selectEditType option:selected").parent().parent().data("type");
 	var qTypeNode = $(this).parent().parent().find(".questionType small");
 	qTypeNode.empty();
 	qTypeNode.append(selectedOption);
 
 	//save selected option in database
+	var data = {
+			q_type_id: qTypeId,
+			q_id: q_id
+		};
+	$.ajax({
+			type: 'POST',
+			url: 'ajax/updateQuestionTypeId.php',
+			data: data
+		});
 
 	//remove input box
 	var optionsAdd = $(this).parent().parent().find(".addOptions");
@@ -120,6 +154,7 @@ $(document).on('enterKeyOptions','.addOptionsInput',function(e){
 	if($(this).is(":focus") && inputFieldText.length > 0)//if true, the input field is in focus and the enter key has been pressed
 	{
 		var thisList = $(this).parentsUntil(".aQuestion").find(".optionEntryList");
+		var q_id = $(this).parentsUntil(".aQuestion").parent().children("#qid").data("question_id");
 		var htmlToAppend = "<li><div class='optionEntry'>"
 		 + inputFieldText + "<span class='x_out'>x</span></div></li>";
 		if(thisList.find(".novalue").length > 0)
@@ -131,14 +166,31 @@ $(document).on('enterKeyOptions','.addOptionsInput',function(e){
 
 		//save option to database
 
+		var data = {
+			option_name: inputFieldText,
+			question_id: q_id
+		};
+		$.ajax({
+				type: 'POST',
+				url: 'ajax/saveOptions.php',
+				data: data
+			});
+
 
 		$(this).val("");
 	}
 });
 
 $(document).on('click', '.x_out', function(){
-
 	//delete option from database
+	var data = {
+			option_id: $(this).parent().data("option_id")
+		};
+		$.ajax({
+				type: 'POST',
+				url: 'ajax/deleteOptions.php',
+				data: data
+			});
 
 	$(this).parent().remove();
 });
