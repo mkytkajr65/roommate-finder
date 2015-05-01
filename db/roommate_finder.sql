@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Apr 28, 2015 at 05:44 PM
+-- Generation Time: May 01, 2015 at 01:41 AM
 -- Server version: 5.5.41-log
 -- PHP Version: 5.6.3
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `answers` (
   `question_id` int(11) NOT NULL,
   `value` int(11) NOT NULL,
   `preference_rating` int(11) DEFAULT NULL COMMENT 'numbers 1-5'
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=106 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=118 ;
 
 --
 -- Dumping data for table `answers`
@@ -125,11 +125,11 @@ INSERT INTO `answers` (`id`, `user_id`, `question_id`, `value`, `preference_rati
 (93, 3, 14, 1, NULL),
 (94, 3, 15, 1, NULL),
 (95, 3, 16, 1, NULL),
-(101, 3, 18, 0, NULL),
-(102, 3, 18, 5, NULL),
-(103, 3, 18, 6, NULL),
-(104, 3, 18, 7, NULL),
-(105, 3, 21, 0, NULL);
+(113, 3, 18, 0, NULL),
+(114, 3, 18, 5, NULL),
+(115, 3, 18, 6, NULL),
+(116, 3, 18, 7, NULL),
+(117, 3, 21, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -203,7 +203,7 @@ CREATE TABLE IF NOT EXISTS `questions` (
   `tab_id` int(11) NOT NULL,
   `type_id` int(11) NOT NULL,
   `public` tinyint(1) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
 
 --
 -- Dumping data for table `questions`
@@ -241,7 +241,7 @@ INSERT INTO `questions` (`id`, `question`, `tab_id`, `type_id`, `public`) VALUES
 CREATE TABLE IF NOT EXISTS `question_types` (
 `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `question_types`
@@ -262,7 +262,7 @@ INSERT INTO `question_types` (`id`, `name`) VALUES
 CREATE TABLE IF NOT EXISTS `tabs` (
 `id` int(11) NOT NULL,
   `name` varchar(30) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `tabs`
@@ -289,18 +289,19 @@ CREATE TABLE IF NOT EXISTS `user` (
   `first_name` varchar(20) NOT NULL,
   `last_name` varchar(30) NOT NULL,
   `account_type` varchar(20) NOT NULL,
-  `email` varchar(50) NOT NULL
+  `email` varchar(50) NOT NULL,
+  `facebook` varchar(50) NOT NULL DEFAULT 'https://www.facebook.com/yourusername'
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `picture`, `password`, `first_name`, `last_name`, `account_type`, `email`) VALUES
-(1, 'dummy.jpg', 'grover', 'Michael', 'Curtis', 'admin', 'michaelcurtis@gmail.com'),
-(2, 'dummy.jpg', 'grover', 'Michael', 'Kytka', 'admin', 'michaelkytka@gmail.com'),
-(3, 'dummy.jpg', 'grover', 'Zach', 'Nafziger', 'admin', 'yourmom@gmail.com'),
-(4, 'dummy.jpg', 'grover', 'Josh', 'Walton', 'admin', 'joshwalton@gmail.com');
+INSERT INTO `user` (`id`, `picture`, `password`, `first_name`, `last_name`, `account_type`, `email`, `facebook`) VALUES
+(1, 'dummy.jpg', 'grover', 'Michael', 'Curtis', 'admin', 'michaelcurtis@gmail.com', ''),
+(2, 'dummy.jpg', 'grover', 'Michael', 'Kytka', 'admin', 'michaelkytka@gmail.com', ''),
+(3, 'dummy.jpg', 'grover', 'Zach', 'Nafziger', 'admin', 'yourmom@gmail.com', 'https://www.facebook.com/znafziger'),
+(4, 'dummy.jpg', 'grover', 'Josh', 'Walton', 'admin', 'joshwalton@gmail.com', '');
 
 --
 -- Indexes for dumped tables
@@ -350,7 +351,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `answers`
 --
 ALTER TABLE `answers`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=106;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=118;
 --
 -- AUTO_INCREMENT for table `options`
 --
@@ -360,17 +361,17 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=82;
 -- AUTO_INCREMENT for table `questions`
 --
 ALTER TABLE `questions`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `question_types`
 --
 ALTER TABLE `question_types`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `tabs`
 --
 ALTER TABLE `tabs`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `user`
 --

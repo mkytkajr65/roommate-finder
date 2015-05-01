@@ -12,6 +12,9 @@ function getAnswersForProfile($profile_id)
   $questions = $questions->results();
 
 	$user = new User($profile_id);
+	$account = $db->query("SELECT * FROM users WHERE id=".escapeName($profile_id)."");
+  $account = $account->first();
+
 
 	echo '<div class="row spacing2"><!--Large Widget Starts here-->
 		<div class="col-md-8 largeRankingWidget center-block">
@@ -30,12 +33,12 @@ function getAnswersForProfile($profile_id)
 				<div class="row">
 					<div class="input-group">
 						<span class="input-group-addon" id="basic-addon1">facebook link</span>
-						<input type="text" class="form-control" placeholder="https://www.facebook.com/your_user_name_here" aria-describedby="basic-addon1">
+						<input type="text" class="form-control" placeholder="'.escapeName($account->facebook).'" aria-describedby="basic-addon1">
 					</div>
 				</div>
 				<div class="row">
 					<div class = "text-center lead">
-						<a href="http://'.escapeName($user->facebook).'" target="_blank">
+						<a href="'.escapeName($account->facebook).'" target="_blank">
 							<img border="0" alt="facebook" src="\images\social\FB-f-Logo__blue_29.png" width="29" height="29">
 						</a>
 					</div>
