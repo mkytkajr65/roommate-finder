@@ -12,5 +12,10 @@
 				"public" => 1,
 				"type_id" => 1
 			));
+		if($works)
+		{
+			$lastId = $db->query("SELECT LAST_INSERT_ID() as id;");
+			echo $lastId->first()->id;
+		}
 	}
 ?>
