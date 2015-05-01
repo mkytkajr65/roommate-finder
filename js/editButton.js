@@ -8,14 +8,16 @@ $(document).on('click', '.editButton' ,function(){
 	var qTypeDataType = qType.data("type");
 	var optionValues = ["Yes/No","Yes/No with preference slider","selection","checkboxes"];
 	var selectValues = "<select class='selectEditType'>";
+	var index = 1;
 	for(var x in optionValues)
 	{
-		selectValues += "<option value='"+ x +"'"
+		selectValues += "<option value='"+ index +"'"
 		if(x == qTypeDataType-1)
 		{
 			selectValues += "selected='selected'";
 		}
 		selectValues +=  ">" + optionValues[x] + "</option>";
+		index++;
 	}
 	selectValues += "</select>";
 	qType.empty();
@@ -29,7 +31,7 @@ $(document).on('click', '.editButton' ,function(){
 			$(this).append(spanX);
 		});
 	}
-	//console.log(qTypeDataType);
+
 	if(qTypeDataType == "3" || qTypeDataType == "4")//needs to check database for acceptable values
 	{
 		var optionsAdd = $(this).parent().parent().find(".addOptions");
@@ -43,11 +45,11 @@ $(document).on('click', '.editButton' ,function(){
 
 $(document).on('change', '.selectEditType' ,function(){
 	var value = $(this).find("option:selected").val();
-	value++;
 	var q_id = $(this).parentsUntil(".aQuestion").parent().children("#qid").data("question_id");
 	$(this).parent().data("type",value);
 	var optionsAdd = $(this).parentsUntil(".aQuestion").parent().find(".addOptions");
 	var thisList = $(this).parentsUntil(".aQuestion").find(".optionEntryList");
+
 	if(value == "3" || value == "4")//needs to check database for acceptable values
 	{
 		optionsAdd.empty();
@@ -155,13 +157,8 @@ $(document).on('enterKeyOptions','.addOptionsInput',function(e){
 	{
 		var thisList = $(this).parentsUntil(".aQuestion").find(".optionEntryList");
 		var q_id = $(this).parentsUntil(".aQuestion").parent().children("#qid").data("question_id");
-		var htmlToAppend = "<li><div class='optionEntry'>"
-		 + inputFieldText + "<span class='x_out'>x</span></div></li>";
-		if(thisList.find(".novalue").length > 0)
-		{
-			thisList.empty();
-		}
-		thisList.append(htmlToAppend);
+		
+
 
 
 		//save option to database
@@ -173,7 +170,20 @@ $(document).on('enterKeyOptions','.addOptionsInput',function(e){
 		$.ajax({
 				type: 'POST',
 				url: 'ajax/saveOptions.php',
-				data: data
+				data: data,
+				success: function(data){
+					var option_id = data;
+					if(option_id)
+					{
+						var htmlToAppend = "<li><div data-option_id='"+ option_id +"' class='optionEntry'>"
+						 + inputFieldText + "<span class='x_out'>x</span></div></li>";
+						if(thisList.find(".novalue").length > 0)
+						{
+							thisList.empty();
+						}
+						thisList.append(htmlToAppend);
+					}
+				}
 			});
 
 
@@ -183,8 +193,9 @@ $(document).on('enterKeyOptions','.addOptionsInput',function(e){
 
 $(document).on('click', '.x_out', function(){
 	//delete option from database
+	var o_id = $(this).parent().data("option_id");
 	var data = {
-			option_id: $(this).parent().data("option_id")
+			option_id: o_id
 		};
 		$.ajax({
 				type: 'POST',

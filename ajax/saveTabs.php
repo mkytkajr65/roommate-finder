@@ -8,6 +8,11 @@
 		$works = $db->insert("tabs",array(
 				"name" => $tab_name
 			));
+		if($works)
+		{
+			$lastId = $db->query("SELECT LAST_INSERT_ID() as id;");
+			echo $lastId->first()->id;
+		}
 	}
 
 ?>

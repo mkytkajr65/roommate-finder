@@ -10,8 +10,7 @@ $(document).on('enterKeyTabs','#tabEntryAdd',function(e){
 	{
 		var thisList = $(this).parentsUntil("#tabs").parent().find("#tabEntryList");
 		var inputFieldText = $.trim($(this).val());
-		var htmlToAppend = "<li><div class='tabEntry'>"+ inputFieldText +"<span class='tabEntry_x'>x</div></li>";
-		thisList.append(htmlToAppend);
+		
 
 
 		//save new tab to database
@@ -23,7 +22,9 @@ $(document).on('enterKeyTabs','#tabEntryAdd',function(e){
 				url: 'ajax/saveTabs.php',
 				data: data, 
 				success: function(data) {
-					console.log(data);
+					var tab_id = data;
+					var htmlToAppend = "<li><div data-tab='"+ tab_id +"' class='tabEntry'>"+ inputFieldText +"<span class='tabEntry_x'>x</div></li>";
+					thisList.append(htmlToAppend);
 				}
 			});
 
@@ -36,16 +37,21 @@ $(document).on('click', '.tabEntry_x', function(){
 	//delete tab from database
 	var tab = $(this).parent().text().slice(0,-1);
 
+	var tab_id = $(this).parent().data("tab");
+
+
+	$('[data-tab_id="'+ tab_id +'"]').remove();
+
+
+	$(this).parentsUntil(".questionTabPanel").find(tab);
+
 	var data = {
 			tab_name: tab
 		};
 		$.ajax({
 				type: 'POST',
 				url: 'ajax/deleteTabs.php',
-				data: data, 
-				success: function(data) {
-					console.log(data);
-				}
+				data: data
 			});
 
 	$(this).parent().remove();

@@ -9,11 +9,7 @@ $("#answersSubmitButton").click(function(){
 		$.ajax({
         url: 'ajax/submitAnswers.php',
         type: 'POST',
-        data: data,
-        success: function(d){
-                   console.log(d);
-            }
-
+        data: data
     	});
 	});
 	thisObj.html("Saving");

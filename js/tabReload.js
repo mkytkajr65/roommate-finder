@@ -11,5 +11,4 @@ $("ul.nav-tabs > li > a").on("shown.bs.tab", function (e) {
 
 // on load of the page: switch to the currently selected tab
 var hash = window.location.hash;
-console.log(hash);
 $('.questionTypeNav a[href="' + hash + '"]').tab('show');

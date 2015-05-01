@@ -11,6 +11,8 @@ function getTabsWithQuestions()
 		$questions = $db->query("SELECT * FROM questions WHERE tab_id = ?", array($tab->id));
 		$questions = $questions->results();
 
+        $name = str_replace(' ', '_', $tab->name);
+        
 		if($first)
 		{
 			$first = false;
@@ -20,7 +22,7 @@ function getTabsWithQuestions()
 		{
 			echo '<div role="tabpanel" class="tab-pane fade"';
 		}
-		echo 'id="'. escapeName($tab->name) .'">';
+		echo 'id="'. escapeName($name) .'">';
 		echo '<form method="POST" name="formSubmit" action="">
                             <div class="row studentQuestion">
                               <div class="col-md-12">
@@ -158,15 +160,17 @@ function getTabs()
 	$tabs = $db->query("SELECT * FROM tabs");
 	$tabs = $tabs->results();
 	$first = true;
+
 	foreach ($tabs as $tab){
+        $name = str_replace(' ', '_', $tab->name);
 		if($first)
 		{
 			$first = false;
-			echo '<li role="presentation" class="active"><a href="#'.escapeName($tab->name).'" aria-controls="'.escapeName($tab->name).'" role="tab" data-toggle="tab">'.escapeName(ucfirst($tab->name)).'</a></li>';
+			echo '<li role="presentation" class="active"><a href="#'.escapeName($name).'" aria-controls="'.escapeName($name).'" role="tab" data-toggle="tab">'.escapeName(ucfirst($tab->name)).'</a></li>';
 		}
 		else
 		{
-			echo '<li role="presentation"><a href="#'.escapeName($tab->name).'" aria-controls="'.escapeName($tab->name).'" role="tab" data-toggle="tab">'.escapeName(ucfirst($tab->name)).'</a></li>';
+			echo '<li role="presentation"><a href="#'.escapeName($name).'" aria-controls="'.escapeName($name).'" role="tab" data-toggle="tab">'.escapeName(ucfirst($tab->name)).'</a></li>';
 		}
 	
 	}

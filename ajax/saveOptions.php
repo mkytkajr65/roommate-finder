@@ -20,7 +20,8 @@
 			));
 		if($works)
 		{
-			echo "works";
+			$lastId = $db->query("SELECT LAST_INSERT_ID() as id;");
+			echo $lastId->first()->id;
 		}
 	}
 

@@ -9,7 +9,7 @@ function getTabs()
 
 	foreach ($tabs as $tab)
 	{
-		echo '<li><div class="tabEntry">'. escapeName($tab->name) .'<span class="tabEntry_x">x</div></li>';
+		echo '<li><div data-tab="'.$tab->id.'" class="tabEntry">'. escapeName($tab->name) .'<span class="tabEntry_x">x</div></li>';
 	}
 }
 ?>
