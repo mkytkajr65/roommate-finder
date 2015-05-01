@@ -25,10 +25,17 @@ function getAnswersForProfile($profile_id)
 					<div class="col-md-5 col-xs-6 center-block profileName">
 						<p class="text-center lead"><a class="profileLink" href="profile.php?id='.$profile_id.'">'.escapeName($user->first_name).' '.escapeName($user->last_name).'</a></p>
 					</div>
+
+				</div>
+				<div class="row">
+					<div class="input-group">
+						<span class="input-group-addon" id="basic-addon1">facebook link</span>
+						<input type="text" class="form-control" placeholder="https://www.facebook.com/your_user_name_here" aria-describedby="basic-addon1">
+					</div>
 				</div>
 				<div class="row">
 					<div class = "text-center lead">
-						<a href="http://www.facebook.com" target="_blank">
+						<a href="http://'.escapeName($user->facebook).'" target="_blank">
 							<img border="0" alt="facebook" src="\images\social\FB-f-Logo__blue_29.png" width="29" height="29">
 						</a>
 					</div>
