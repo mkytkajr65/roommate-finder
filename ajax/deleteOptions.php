@@ -3,7 +3,7 @@
 	
 	$db = DB::getInstance();
 
-	echo $o_id = Input::get("option_id");
+	$o_id = Input::get("option_id");
 
 	if($o_id)
 	{

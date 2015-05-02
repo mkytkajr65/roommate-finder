@@ -26,10 +26,6 @@ class User
 					$this->account_type = $this->data()->account_type;
 					$this->facebook = $this->data()->facebook;
 				}
-				else
-				{
-					//process logout
-				}
 			}
 		}
 		else
@@ -62,11 +58,14 @@ class User
 		if($user)
 		{
 			$field = (is_numeric($user)) ? 'id': 'username';
+
 			$data = $this->_db->get('user', array($field, '=', $user));
+			
 
 			if($data->count())
 			{
 				$this->_data = $data->first();
+				$this->id = $this->data()->id;
 				$this->picture = $this->data()->picture;
 				$this->first_name = $this->data()->first_name;
 				$this->last_name = $this->data()->last_name;

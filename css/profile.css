@@ -5,6 +5,78 @@
 	border-radius: 2px;
 }
 
+#facebook_link
+{
+	width: 20em;
+}
+
+#facebookChangeSubmit
+{
+	background-color: #3b5998;
+	color: white;
+	border: 1px solid #3b5998;
+}
+
+#facebook_change_link
+{
+	width: 20em;
+}
+
+#editFBLinkToggle
+{
+	color:white;
+	cursor: pointer;
+	padding: .1em;
+}
+
+#editFBLinkToggle:hover
+{
+	color: #A31919;
+}
+
+#editFBArea
+{
+	margin-top: 0.5em;
+	display: none;
+}
+
+#facebookTooltip
+{
+	margin-left: .5em;
+}
+
+#facebookChangeTooltip
+{
+	margin-left: .5em;
+	color: white;
+}
+
+#changeFBArea
+{
+	margin-bottom: 1em;
+	margin-top: 0.5em;
+	display: none;
+}
+
+#removeFB
+{
+	color:white;
+	cursor: pointer;
+}
+
+#editFB
+{
+	color:white;
+	cursor: pointer;
+}
+
+#facebookSubmit
+{
+	background-color: #3b5998;
+	color: white;
+	border: 1px solid #3b5998;
+}
+
 .largeRankingWidget
 {
 	background-color: white;

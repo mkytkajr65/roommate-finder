@@ -9,7 +9,6 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand"><span class="glyphicon glyphicon-tasks" id="toggle" aria-hidden="true"></span></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

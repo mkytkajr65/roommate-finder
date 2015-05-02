@@ -25,7 +25,6 @@ if(Input::exists())
     <link href="css/mainLayout.css" rel="stylesheet"><!--Required for all pages-->
     <link href="css/navbar.css" rel="stylesheet"><!--Required for all pages-->
     <link href="css/circle.css" rel="stylesheet"><!--Required for all pages-->
-    <link href="css/off-canvas-nav.css" rel="stylesheet"><!--Required for all pages-->
     <link href="css/homePage.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -65,7 +64,6 @@ if(Input::exists())
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/off-canvas-slide.js"></script>
     <script src="js/preferenceSlider.js"></script>
     <script src="js/on_off_switch.js"></script>
   </body>

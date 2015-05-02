@@ -21,7 +21,6 @@
     <link href="css/mainLayout.css" rel="stylesheet"><!--Required for all pages-->
     <link href="css/navbar.css" rel="stylesheet"><!--Required for all pages-->
     <link href="css/circle.css" rel="stylesheet"><!--Required for all pages-->
-    <link href="css/off-canvas-nav.css" rel="stylesheet"><!--Required for all pages-->
     <link href="css/matches.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -40,7 +39,6 @@
       */
       include("navbar.php");
 
-      include("off-canvas-nav.php");
     ?>
     <div class="pushContainer"></div>
      <div class="container">
@@ -62,8 +60,13 @@
                 </div>
               </div>
 
-                <?php listMatches($user->id) ?>
-                <?php getMatchesForProfile($user->id); ?>
+                <?php 
+
+                $matches = getMatches($user->id);
+
+                listBestTenMatches($matches);
+
+                ?>
             </div>
           </div>
         </div>
@@ -74,7 +77,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/off-canvas-slide.js"></script>
     <script src="js/preferenceSlider.js"></script>
     <script src="js/changeSizeProfilePic.js"></script>
   </body>
