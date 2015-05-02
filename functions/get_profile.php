@@ -96,8 +96,25 @@ function getAnswersForProfile($profile_id)
 
 
 
-			$counter = 0;
+			$counter = 1;
+
 			echo '<div class="row spacing2">';
+			if(!$currentUsersProfile)
+			{
+				$matchScore = intval(getMatchScore($currentUser->id, $userForProfile->id));
+				echo '<div class="col-md-4">
+					<div class="row">
+						<div class="col-md-12">
+							<h4 class="text-center">Match Rating</h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 paddingTop2">
+							<div class="c100 p'.$matchScore.' large center"><span>'.$matchScore.'%</span><div class="slice"><div class="bar"></div><div class="fill"></div></div></div>
+						</div>
+					</div>
+				</div>';
+			}
 			$firstsection = true;
 	foreach ($tabs as $tab) {
 		if($firstsection != true)
@@ -363,7 +380,7 @@ function getMatches($profile_id)
 	$userarray = array();
 	foreach($users as $user)
 	{
-		$newUser = new UserScore($user->id, getMatchScore($user->id, $profile_id));
+		$newUser = new UserScore($user->id, getMatchScore($profile_id, $user->id));
 		if($user->id != $profile_id) array_push($userarray, $newUser);
 	}
 
