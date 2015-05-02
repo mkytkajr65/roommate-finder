@@ -46,19 +46,6 @@
         <div class="col-md-12">
           <div class="row">
             <div class="col-md-10 center-block" id="matchArea">
-              <div class="row">
-                <div class="form-group col-md-3" id="sortMatchArea">
-                  <label>Sort By:</label>
-                  <select class="form-control">
-                      <option>Match Percentage</option>
-                      <option>Sleeping Match</option>
-                      <option>Studying Match</option>
-                      <option>Room Match</option>
-                      <option>Personal Match</option>
-                      <option>Lifestyle Match</option>
-                  </select>
-                </div>
-              </div>
 
                 <?php 
 

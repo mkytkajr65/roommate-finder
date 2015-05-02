@@ -248,6 +248,7 @@ function getMatchesForProfile($profile_id)
 				</div>
 			</div>';
 			$firstsection = true;
+
 	if($public == 1)
 	foreach ($tabs as $tab) {
 		if($firstsection != true)
@@ -417,7 +418,21 @@ function listBestTenMatches($UserScoreArray)
 
 					$counter = 1;
 					echo '<div class="row spacing2">';
-					echo '<div class="col-md-4">
+					echo '<div class="col-md-4';
+					$public_answer = $db->query("SELECT * FROM public_answer WHERE user_id = ?", array($targetUser->id));
+
+					if($public_answer->count())
+					{
+						$public_answer = $public_answer->first();
+						$public_answer = $public_answer->value;
+
+						if($public_answer != 1)
+						{
+							echo "center-block";
+						}
+					}
+
+					echo'">
 						<div class="row">
 							<div class="col-md-12">
 								<h4 class="text-center">Match Rating</h4>
@@ -430,86 +445,109 @@ function listBestTenMatches($UserScoreArray)
 						</div>
 					</div>';
 					$firstsection = true;
-			foreach ($tabs as $tab) {
-				if($firstsection != true)
+
+			$public_answer = $db->query("SELECT * FROM public_answer WHERE user_id = ?", array($targetUser->id));
+
+			if($public_answer->count())
+			{
+				$public_answer = $public_answer->first();
+				$public_answer = $public_answer->value;
+
+				if($public_answer == 1)
+				{
+
+
+					foreach ($tabs as $tab)
 					{
-					if($counter >= 3){
-						$counter = 0;
-						echo '</div>
-						<div class="row spacing2">';
-
-					}
-
-					echo '<div class="col-md-4">
-						<div class="row">
-							<div class="col-md-12">
-								<h4 class="text-center">'.ucfirst(escapeName($tab->name)).'</h4>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<ul class="noPadding">';
-
-					$questions = $db->query("SELECT * FROM questions WHERE tab_id = ?", array($tab->id));
-					$questions = $questions->results();
-
-
-
-
-			    foreach($questions as $question)
-			    {
-				      $answers = $db->query("SELECT * FROM answers WHERE question_id = ? AND user_id = ".$targetUser->id."", array($question->id));
-				      $answers = $answers->results();
-
-
-							if($question->type_id != 1 && $question->type_id != 2)
+						if($firstsection != true)
 							{
-								$checkboxes = false;
-								$first_item = true;
-								if($question->type_id == 4) {$checkboxes = true;}
+							if($counter >= 3){
+								$counter = 0;
+								echo '</div>
+								<div class="row spacing2">';
 
-					      foreach($answers as $answer){
-
-					        $answer_strings =  $db->query("SELECT * FROM options WHERE question_id = ? AND value_index = ".escapeName($answer->value)."", array($question->id));
-					        $answer_strings = $answer_strings->results();
-
-
-					        foreach($answer_strings as $answer_string)
-					        {
-										if($checkboxes == false) echo '<li>'. escapeName($question->question).' <strong>'.escapeName($answer_string->name).'</strong></li>';
-										if($checkboxes == true && $first_item == false){
-											echo ', '.escapeName($answer_string->name).'';
-										}
-										if($checkboxes == true && $first_item == true){
-											echo '<li>'. escapeName($question->question).' <strong> '.escapeName($answer_string->name).'';
-											$first_item = false;
-										}
-
-					        }
-
-					      }
-								if($checkboxes == true) {echo '</strong></li>';}
-							} else
-							{
-								foreach($answers as $answer){
-									$yesno = $answer->value;
-									if($yesno == 0)
-									{
-										echo '<li>'. escapeName($question->question).' <strong>No.</strong></li>';
-									} else{
-										echo '<li>'. escapeName($question->question).' <strong>Yes.</strong></li>';
-									}
-
-								}
 							}
-			    }
-					echo '</ul>
-							</div>
+
+							echo '<div class="col-md-4">
+								<div class="row">
+									<div class="col-md-12">
+										<h4 class="text-center">'.ucfirst(escapeName($tab->name)).'</h4>
+									</div>
 								</div>
-							</div>';
-					$counter++;
-				} else $firstsection = false;
-		  }
+								<div class="row">
+									<div class="col-md-12">
+										<ul class="noPadding">';
+
+							$questions = $db->query("SELECT * FROM questions WHERE tab_id = ?", array($tab->id));
+							$questions = $questions->results();
+
+
+
+
+					    foreach($questions as $question)
+					    {
+						      $answers = $db->query("SELECT * FROM answers WHERE question_id = ? AND user_id = ".$targetUser->id."", array($question->id));
+						      $answers = $answers->results();
+
+
+									if($question->type_id != 1 && $question->type_id != 2)
+									{
+										$checkboxes = false;
+										$first_item = true;
+										if($question->type_id == 4) {$checkboxes = true;}
+
+							      foreach($answers as $answer){
+
+							        $answer_strings =  $db->query("SELECT * FROM options WHERE question_id = ? AND value_index = ".escapeName($answer->value)."", array($question->id));
+							        $answer_strings = $answer_strings->results();
+
+
+							        foreach($answer_strings as $answer_string)
+							        {
+												if($checkboxes == false) echo '<li>'. escapeName($question->question).' <strong>'.escapeName($answer_string->name).'</strong></li>';
+												if($checkboxes == true && $first_item == false){
+													echo ', '.escapeName($answer_string->name).'';
+												}
+												if($checkboxes == true && $first_item == true){
+													echo '<li>'. escapeName($question->question).' <strong> '.escapeName($answer_string->name).'';
+													$first_item = false;
+												}
+
+							        }
+
+							      }
+										if($checkboxes == true) {echo '</strong></li>';}
+									} else
+									{
+										foreach($answers as $answer){
+											$yesno = $answer->value;
+											if($yesno == 0)
+											{
+												echo '<li>'. escapeName($question->question).' <strong>No.</strong></li>';
+											} else{
+												echo '<li>'. escapeName($question->question).' <strong>Yes.</strong></li>';
+											}
+
+										}
+									}
+					    }
+							echo '</ul>
+									</div>
+										</div>
+									</div>';
+							$counter++;
+						} else $firstsection = false;
+				  	}
+				}
+				else
+				{
+					echo "<div class='col-md-12 text-center'><h3>Answers Not Public</h3></div>";
+				}
+			}
+			else
+			{
+				echo "<div class='col-md-12 text-center'><h3>Answers Not Public</h3></div>";
+			}
 			echo '</div>';
 			echo'</ul></div>
 		</div><!--Large widget ends here-->';
