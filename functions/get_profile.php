@@ -35,7 +35,7 @@ function getAnswersForProfile($profile_id)
 					<div class="profilePic col-md-3 center-block"></div>
 				</div>
 				<div class="row spacing1">
-					<div class="col-md-5 col-xs-6 center-block profileName">
+					<div class="col-md-5 col-sm-4 center-block profileName">
 						<p class="text-center lead"><a class="profileLink" href="profile.php?id='.$profile_id.'">'.escapeName($userForProfile->first_name).' '.escapeName($userForProfile->last_name).'</a></p>
 					</div>
 
@@ -231,7 +231,7 @@ function getMatchesForProfile($profile_id)
 					<div class="profilePic col-md-3 center-block"></div>
 				</div>
 				<div class="row spacing1">
-					<div class="col-md-5 center-block profileName">
+					<div class="col-md-5 col-sm-4 center-block profileName">
 						<p class="text-center lead"><a class="profileLink" href="profile.php?id='.$profile_id.'">'.escapeName($user->first_name).' '.escapeName($user->last_name).'</a></p>
 					</div>
 
@@ -410,7 +410,7 @@ function listBestTenMatches($UserScoreArray)
 							<div class="profilePic col-md-3 center-block"></div>
 						</div>
 						<div class="row spacing1">
-							<div class="col-md-5 center-block profileName">
+							<div class="col-md-5 col-sm-4 center-block profileName">
 								<p class="text-center lead"><a class="profileLink" href="profile.php?id='.$targetUser->id.'">'.escapeName($targetUser->first_name).' '.escapeName($targetUser->last_name).'</a></p>
 							</div>
 
