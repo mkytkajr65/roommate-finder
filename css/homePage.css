@@ -8,7 +8,7 @@
 	margin-top: 1em;
 }
 
-#answersSubmitButton
+#prevTab
 {
 	width: 100%;
 	color: white;
@@ -17,6 +17,28 @@
 	border-radius: 3px;
 	background-color:#454545;
 	border: 0;
+}
+
+#answersSubmitButton
+{
+  width: 100%;
+  color: white;
+  padding: 0;
+  height: 3em;
+  border-radius: 3px;
+  background-color:#454545;
+  border: 0;
+}
+
+#nextTab
+{
+  width: 100%;
+  color: white;
+  padding: 0;
+  height: 3em;
+  border-radius: 3px;
+  background-color:#454545;
+  border: 0;
 }
 
 #answersSubmitButton:hover

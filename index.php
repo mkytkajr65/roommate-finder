@@ -58,8 +58,18 @@
         <div class="row">
               <div class="col-md-8 center-block" id="saveArea">
                 <div class="row">
-                  <div class="col-md-4 center-block">
-                    <button id="answersSubmitButton">Save</button>
+                  <div class="col-md-10 center-block">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <button id="prevTab">Previous</button>
+                      </div>
+                      <div class="col-md-4">
+                        <button id="answersSubmitButton">Save</button>
+                      </div>
+                      <div class="col-md-4">
+                        <button id="nextTab">Next</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -73,5 +83,6 @@
     <script src="js/preferenceSlider.js"></script>
     <script src="js/saveAnswers.js"></script>
     <script src="js/tabReload.js"></script>
+    <script src="js/changeTab.js"></script>
   </body>
 </html>
