@@ -12,8 +12,6 @@ $(document).ready(function(){
 		    $(this).addClass("col-md-4");
 		    $(this).removeClass("col-sm-4");
 		    $(this).addClass("col-sm-3");
-		    $(this).removeClass("col-xs-6");
-		    $(this).addClass("col-sm-7");
 		  } else if (textlength < 15) {
 		    //nothing
 		  }else if(textlength < 20){
@@ -24,35 +22,26 @@ $(document).ready(function(){
 		    $(this).addClass("col-md-6");
 		    $(this).removeClass("col-sm-4");
 		    $(this).addClass("col-sm-5");
-			$(this).removeClass("col-xs-8");
 		  }else if(textlength < 30){
 		  	$(this).removeClass("col-md-5");
 		    $(this).addClass("col-md-7");
 		    $(this).removeClass("col-sm-4");
 		    $(this).addClass("col-sm-6");
-			$(this).removeClass("col-xs-6");
-		    $(this).addClass("col-xs-7");
 		  }else if(textlength < 35){
 		  	$(this).removeClass("col-md-5");
 		    $(this).addClass("col-md-8");
 		    $(this).removeClass("col-sm-4");
 		    $(this).addClass("col-sm-7");
-		    $(this).removeClass("col-xs-6");
-		    $(this).addClass("col-xs-9");
 		  }else if(textlength < 40){
 		  	$(this).removeClass("col-md-5");
 		    $(this).addClass("col-md-9");
 		    $(this).removeClass("col-sm-4");
 		    $(this).addClass("col-sm-8");
-		    $(this).removeClass("col-xs-6");
-		    $(this).addClass("col-xs-10");
 		  }else if(textlength > 40){
 		  	$(this).removeClass("col-md-5");
 		    $(this).addClass("col-md-10");
 		    $(this).removeClass("col-sm-4");
 		    $(this).addClass("col-sm-9");
-		    $(this).removeClass("col-xs-6");
-		    $(this).addClass("col-xs-11");
 		  }
 
 	});

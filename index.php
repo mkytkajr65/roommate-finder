@@ -58,15 +58,15 @@
         <div class="row">
               <div class="col-md-8 center-block" id="saveArea">
                 <div class="row">
-                  <div class="col-md-10 col-sm-10 col-xs-10 center-block">
+                  <div class="col-md-10 center-block">
                     <div class="row">
-                      <div class="col-md-4 col-sm-4 col-xs-4">
+                      <div class="col-md-4">
                         <button id="prevTab">Previous</button>
                       </div>
-                      <div class="col-md-4 col-sm-4 col-xs-4">
+                      <div class="col-md-4">
                         <button id="answersSubmitButton">Save</button>
                       </div>
-                      <div class="col-md-4 col-sm-4 col-xs-4">
+                      <div class="col-md-4">
                         <button id="nextTab">Next</button>
                       </div>
                     </div>

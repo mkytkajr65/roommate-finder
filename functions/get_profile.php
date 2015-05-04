@@ -35,7 +35,7 @@ function getAnswersForProfile($profile_id)
 					<div class="profilePic col-md-3 center-block"></div>
 				</div>
 				<div class="row spacing1">
-					<div class="col-md-5 col-sm-4 col-xs-6 center-block profileName">
+					<div class="col-md-5 col-sm-4 center-block profileName">
 						<p class="text-center lead"><a class="profileLink" href="profile.php?id='.$profile_id.'">'.escapeName($userForProfile->first_name).' '.escapeName($userForProfile->last_name).'</a></p>
 					</div>
 
@@ -102,23 +102,7 @@ function getAnswersForProfile($profile_id)
 			if(!$currentUsersProfile)
 			{
 				$matchScore = intval(getMatchScore($currentUser->id, $userForProfile->id));
-				echo '<div class="col-md-4';
-
-				$public_answer = $db->query("SELECT * FROM public_answer WHERE user_id = ?", array($userForProfile->id));
-
-
-				if($public_answer->count())
-				{
-					$public_answer = $public_answer->first();
-					$public_answer = $public_answer->value;
-
-					if($public_answer != 1)
-					{
-						echo "center-block";
-					}
-				}
-
-				echo'">
+				echo '<div class="col-md-4">
 					<div class="row">
 						<div class="col-md-12">
 							<h4 class="text-center">Match Rating</h4>
@@ -132,18 +116,6 @@ function getAnswersForProfile($profile_id)
 				</div>';
 			}
 			$firstsection = true;
-
-	$targetUser = $userForProfile;
-$public_answer = $db->query("SELECT * FROM public_answer WHERE user_id = ?", array($targetUser->id));
-
-if($public_answer->count())
-{
-	$public_answer = $public_answer->first();
-	$public_answer = $public_answer->value;
-
-	if($public_answer == 1)
-	{
-
 	foreach ($tabs as $tab) {
 		if($firstsection != true)
 			{
@@ -223,16 +195,6 @@ if($public_answer->count())
 					</div>';
 			$counter++;
 		} else $firstsection = false;
-	}
-	}
-	else
-	{
-		echo "<div class='col-md-12 text-center'><h3>Answers Not Public</h3></div>";
-	}
-  }
-  else
-  {
-  	echo "<div class='col-md-12 text-center'><h3>Answers Not Public</h3></div>";
   }
 	echo '</div>';
 	echo'</ul></div>
@@ -290,26 +252,8 @@ function getMatchesForProfile($profile_id)
 
 			$counter = 1;
 			echo '<div class="row spacing2">';
-			echo '<div class="col-md-4';
-
-
-
-			$public_answer = $db->query("SELECT * FROM public_answer WHERE user_id = ?", array($user->id));
-
-
-			if($public_answer->count())
-			{
-				$public_answer = $public_answer->first();
-				$public_answer = $public_answer->value;
-
-				if($public_answer != 1)
-				{
-					echo "center-block";
-				}
-			}
-
-			echo'">';
-			echo	'<div class="row">
+			echo '<div class="col-md-4">
+				<div class="row">
 					<div class="col-md-12">
 						<h4 class="text-center">Match Rating</h4>
 					</div>
@@ -466,7 +410,7 @@ function listBestTenMatches($UserScoreArray)
 							<div class="profilePic col-md-3 center-block"></div>
 						</div>
 						<div class="row spacing1">
-							<div class="col-md-5 col-sm-4 col-xs-6 center-block profileName">
+							<div class="col-md-5 col-sm-4 center-block profileName">
 								<p class="text-center lead"><a class="profileLink" href="profile.php?id='.$targetUser->id.'">'.escapeName($targetUser->first_name).' '.escapeName($targetUser->last_name).'</a></p>
 							</div>
 
