@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:8889
--- Generation Time: May 02, 2015 at 09:45 PM
+-- Generation Time: May 04, 2015 at 04:53 PM
 -- Server version: 5.5.38
 -- PHP Version: 5.5.14
 
@@ -26,7 +26,7 @@ CREATE TABLE `answers` (
   `question_id` int(11) NOT NULL,
   `value` int(11) NOT NULL,
   `preference_rating` int(11) DEFAULT NULL COMMENT 'numbers 1-5'
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=559 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=622 ;
 
 --
 -- Dumping data for table `answers`
@@ -173,13 +173,6 @@ INSERT INTO `answers` (`id`, `user_id`, `question_id`, `value`, `preference_rati
 (211, 8, 16, 0, NULL),
 (212, 8, 17, 0, NULL),
 (216, 8, 18, 5, NULL),
-(525, 2, 18, 0, NULL),
-(526, 2, 18, 1, NULL),
-(527, 2, 18, 2, NULL),
-(528, 2, 18, 4, NULL),
-(529, 2, 18, 5, NULL),
-(530, 2, 18, 6, NULL),
-(531, 2, 18, 7, NULL),
 (532, 5, 18, 0, NULL),
 (533, 5, 18, 6, NULL),
 (534, 9, 1, 0, 1),
@@ -204,7 +197,14 @@ INSERT INTO `answers` (`id`, `user_id`, `question_id`, `value`, `preference_rati
 (555, 9, 18, 4, NULL),
 (556, 9, 18, 5, NULL),
 (557, 9, 18, 6, NULL),
-(558, 9, 18, 7, NULL);
+(558, 9, 18, 7, NULL),
+(615, 2, 18, 0, NULL),
+(616, 2, 18, 1, NULL),
+(617, 2, 18, 2, NULL),
+(618, 2, 18, 4, NULL),
+(619, 2, 18, 5, NULL),
+(620, 2, 18, 6, NULL),
+(621, 2, 18, 7, NULL);
 
 -- --------------------------------------------------------
 
@@ -405,23 +405,25 @@ CREATE TABLE `user` (
   `account_type` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
   `facebook` varchar(50) NOT NULL DEFAULT 'https://www.facebook.com/yourusername',
-  `public` tinyint(4) NOT NULL DEFAULT '1'
+  `public` tinyint(4) NOT NULL DEFAULT '1',
+  `gender` int(11) NOT NULL COMMENT '0 = female 1 = male',
+  `status` smallint(6) NOT NULL COMMENT '0 = new student, 1 = current student'
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `picture`, `password`, `first_name`, `last_name`, `account_type`, `email`, `facebook`, `public`) VALUES
-(1, 'dummy.jpg', 'grover', 'Michael', 'Curtis', 'admin', 'michaelcurtis@gmail.com', '', 1),
-(2, 'dummy.jpg', 'grover', 'Michael', 'Kytka', 'admin', 'michaelkytka@gmail.com', '', 1),
-(3, 'dummy.jpg', 'grover', 'Zach', 'Nafziger', 'admin', 'yourmom@gmail.com', 'https://www.facebook.com/znafziger', 1),
-(4, 'dummy.jpg', 'grover', 'Josh', 'Walton', 'admin', 'joshwalton@gmail.com', '', 1),
-(5, 'dummy.jpg', 'grover', 'Tyler', 'Depew', '', 'tylerdepew@gmail.com', 'https://www.facebook.com', 1),
-(6, 'dummy.jpg', 'grover', 'Sean', 'Oriordan', '', 'seanoriordan@gmail.com', 'https://www.facebook.com', 1),
-(7, 'dummy.jpg', 'grover', 'Ryan', 'Duran', '', 'ryanduran@gmail.com', 'https://www.facebook.com', 1),
-(8, 'dummy.jpg', 'grover', 'James', 'Payne', '', 'jamespayne@gmail.com', 'https://www.facebook.com', 1),
-(9, 'dummy.jpg', 'grover', 'Michael', 'Kitkat', '', 'kytka@gmail.com', 'https://www.facebook.com', 1);
+INSERT INTO `user` (`id`, `picture`, `password`, `first_name`, `last_name`, `account_type`, `email`, `facebook`, `public`, `gender`, `status`) VALUES
+(1, 'dummy.jpg', 'grover', 'Michael', 'Curtis', 'admin', 'michaelcurtis@gmail.com', '', 1, 1, 0),
+(2, 'dummy.jpg', 'grover', 'Michael', 'Kytka', 'admin', 'michaelkytka@gmail.com', 'https://www.facebook.com/Michael.Kytka.Jr', 1, 1, 1),
+(3, 'dummy.jpg', 'grover', 'Zach', 'Nafziger', 'admin', 'yourmom@gmail.com', 'https://www.facebook.com/znafziger', 1, 1, 0),
+(4, 'dummy.jpg', 'grover', 'Josh', 'Walton', 'admin', 'joshwalton@gmail.com', '', 1, 1, 1),
+(5, 'dummy.jpg', 'grover', 'Tyler', 'Depew', '', 'tylerdepew@gmail.com', 'https://www.facebook.com', 1, 1, 0),
+(6, 'dummy.jpg', 'grover', 'Sean', 'Oriordan', '', 'seanoriordan@gmail.com', 'https://www.facebook.com', 1, 1, 0),
+(7, 'dummy.jpg', 'grover', 'Ryan', 'Duran', '', 'ryanduran@gmail.com', 'https://www.facebook.com', 1, 1, 0),
+(8, 'dummy.jpg', 'grover', 'James', 'Payne', '', 'jamespayne@gmail.com', 'https://www.facebook.com', 1, 1, 0),
+(9, 'dummy.jpg', 'grover', 'Michael', 'Kitkat', '', 'kytka@gmail.com', 'https://www.facebook.com', 1, 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -483,7 +485,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `answers`
 --
 ALTER TABLE `answers`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=559;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=622;
 --
 -- AUTO_INCREMENT for table `options`
 --
