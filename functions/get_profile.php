@@ -381,7 +381,7 @@ function getMatches($profile_id)
 	foreach($users as $user)
 	{
 		$newUser = new UserScore($user->id, getMatchScore($profile_id, $user->id));
-		if($user->id != $profile_id) array_push($userarray, $newUser);
+		if($user->id != $profile_id && $user->gender === $profile->gender && $user->status === $profile->status) array_push($userarray, $newUser);
 	}
 
 	usort($userarray, "cmp");
