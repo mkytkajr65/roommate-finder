@@ -1,15 +1,19 @@
 $("#answersSubmitButton").click(function(){
 	var thisObj = $(this);
 
-	var firstForm = $('form[name="public_question_form"]');
+	var firstForm = $('form[name="start_question_form"]');
+
 
 	var data = {
 			data: firstForm.serializeArray()
 		};
 	$.ajax({
-        url: 'ajax/submitPublicAnswer.php',
+        url: 'ajax/submitStartAnswers.php',
         type: 'POST',
-        data: data
+        data: data,
+        success: function(data){
+        	console.log(data);
+        }
     });
 
 

@@ -18,8 +18,8 @@ function getTabsWithQuestions()
     echo 'id="start">';
 
 
-    echo '<br><form method="post" name="public_question_form" action="">';
-    echo '<h4>'.escapeName($public_question->question).'</h4>';
+    echo '<br><form method="post" name="start_question_form" action=""><ol>';
+    echo '<li><h4>'.escapeName($public_question->question).'</h4>';
     echo '<div class="container-fluid"><div class="col-md-12 answerInput">';
     echo '<div class="col-md-6">
               <div class="onoffswitch">
@@ -46,7 +46,26 @@ function getTabsWithQuestions()
                     <span class="onoffswitch-switch"></span>
                 </label>
               </div>
-          </div></div></div></form>';
+          </div></div></div></li>';
+    echo '<li><h4>Are you a current student?</h4>';
+    echo '<div class="container-fluid"><div class="col-md-12 answerInput">';
+    echo '<div class="col-md-6">
+              <div class="onoffswitch">
+                <input type="hidden" name="status" value="0">
+                <input type="checkbox" name="status"
+                 value="1" class="onoffswitch-checkbox"
+                  id="status"';
+        
+    if($user->status == 1) echo 'checked';
+
+    echo             '>
+                <label class="onoffswitch-label" for="status">
+                    <span class="onoffswitch-inner"></span>
+                    <span class="onoffswitch-switch"></span>
+                </label>
+              </div>
+          </div></div></div></li>';
+    echo'</ol></form>';
     echo '</div>';
 
 
