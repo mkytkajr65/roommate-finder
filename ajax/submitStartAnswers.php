@@ -9,7 +9,7 @@
 	foreach ($answers as $answer)
 	{
 		echo $answer["name"] . " " . $answer["value"];
-		if($answer["name"] == "Q_1" )
+		if($answer["name"] == "PQ_1" )
 		{
 			$row = $db->query("SELECT * FROM public_answer WHERE user_id = ?", array($user->id));
 			if(!$row->count())

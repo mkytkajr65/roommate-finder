@@ -23,10 +23,10 @@ function getTabsWithQuestions()
     echo '<div class="container-fluid"><div class="col-md-12 answerInput">';
     echo '<div class="col-md-6">
               <div class="onoffswitch">
-                <input type="hidden" name="Q_'.$public_question->id.'" value="0">
-                <input type="checkbox" name="Q_'.$public_question->id.'"
+                <input type="hidden" name="PQ_'.$public_question->id.'" value="0">
+                <input type="checkbox" name="PQ_'.$public_question->id.'"
                  value="1" class="onoffswitch-checkbox"
-                  id="Q_'.$public_question->id.'"';
+                  id="PQ_'.$public_question->id.'"';
     $selected = $db->query("SELECT * FROM public_answer
     WHERE user_id = ?", array($user->id));
     if($selected->count())
@@ -41,7 +41,7 @@ function getTabsWithQuestions()
         echo 'checked';
     }
     echo             '>
-                <label class="onoffswitch-label" for="Q_'.$public_question->id.'">
+                <label class="onoffswitch-label" for="PQ_'.$public_question->id.'">
                     <span class="onoffswitch-inner"></span>
                     <span class="onoffswitch-switch"></span>
                 </label>

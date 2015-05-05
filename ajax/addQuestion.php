@@ -9,7 +9,6 @@
 	{
 		$works = $db->insert("questions",array(
 				"tab_id" => $tab_id,
-				"public" => 1,
 				"type_id" => 1
 			));
 		if($works)
