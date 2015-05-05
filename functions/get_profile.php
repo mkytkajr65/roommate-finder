@@ -116,13 +116,7 @@ function getAnswersForProfile($profile_id)
 			}
 			$firstsection = false;
 			$targetUser = $userForProfile;
-			$public_answer = $db->query("SELECT * FROM public_answer WHERE user_id = ?", array($targetUser->id));
-			if($public_answer->count())
-			{
-				$public_answer = $public_answer->first();
-				$public_answer = $public_answer->value;
-				if($public_answer == 1)
-				{
+
 	foreach ($tabs as $tab) {
 			if($counter >= 3){
 				$counter = 0;
@@ -140,10 +134,8 @@ function getAnswersForProfile($profile_id)
 						<ul class="noPadding">';
 			$questions = $db->query("SELECT * FROM questions WHERE tab_id = ?", array($tab->id));
 			$questions = $questions->results();
-			echo count($questions);
 	    foreach($questions as $question)
 	    {
-	    				echo "question";
 				      $answers = $db->query("SELECT * FROM answers WHERE question_id = ? AND user_id = ".$profile_id."", array($question->id));
 				      $answers = $answers->results();
 				      //echo print_r($answers);
@@ -188,16 +180,6 @@ function getAnswersForProfile($profile_id)
 					</div>';
 			$counter++;
 		}
-		}
-		else
-		{
-			echo "<div class='col-md-12 text-center'><h3>Answers Not Public</h3></div>";
-		}
-	  }
-	  else
-	  {
-	  	echo "<div class='col-md-12 text-center'><h3>Answers Not Public</h3></div>";
-  }
 	echo '</div>';
 	echo'</ul></div>
 </div><!--Large widget ends here-->';
