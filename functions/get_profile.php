@@ -33,11 +33,11 @@ function getAnswersForProfile($profile_id)
 						<p class="text-center lead"><a class="profileLink" href="profile.php?id='.$profile_id.'">'.escapeName($userForProfile->first_name).' '.escapeName($userForProfile->last_name).'</a></p>
 					</div>
 				</div>';
-		
+
 			echo'<div id="facebookLinkArea" class="row">
 					<div id="fb_edit_area_container" class="center-block col-md-4 text-center lead">';
 			if($userForProfile->facebook && $currentUsersProfile)
-			{			
+			{
 					echo'<div id="fbButton_edit" class="row">
 							<div class="col-md-8 center-block">
 								<div class="row">
@@ -81,11 +81,11 @@ function getAnswersForProfile($profile_id)
 	                </div>
 				</div>';
 		}
-			
+
 		echo'	</div>
 		</div>
 			</div>';
-			$counter = 1;
+			$counter = 0;
 			echo '<div class="row spacing2">';
 			if(!$currentUsersProfile)
 			{
