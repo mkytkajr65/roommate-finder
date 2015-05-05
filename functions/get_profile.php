@@ -146,7 +146,8 @@ function getAnswersForProfile($profile_id)
 						if($question->type_id == 4) {$checkboxes = true;}
 						//print_r($answers);
 			      foreach($answers as $answer){
-			        $answer_strings =  $db->query("SELECT * FROM options WHERE question_id = ? AND value_index = ".escapeName($answer->value)."", array($question->id));
+							$ans_val = $answer->value + 1;
+			        $answer_strings =  $db->query("SELECT * FROM options WHERE question_id = ? AND value_index = ".$ans_val."", array($question->id));
 			        $answer_strings = $answer_strings->results();
 			        foreach($answer_strings as $answer_string)
 			        {
@@ -309,8 +310,8 @@ function getMatchesForProfile($profile_id)
 						if($question->type_id == 4) {$checkboxes = true;}
 
 			      foreach($answers as $answer){
-
-			        $answer_strings =  $db->query("SELECT * FROM options WHERE question_id = ? AND value_index = ".escapeName($answer->value)."", array($question->id));
+							$ans_val = $answer->value + 1;
+			        $answer_strings =  $db->query("SELECT * FROM options WHERE question_id = ? AND value_index = ".$ans_val."", array($question->id));
 			        $answer_strings = $answer_strings->results();
 
 
@@ -513,10 +514,10 @@ function listBestTenMatches($UserScoreArray)
 										$checkboxes = false;
 										$first_item = true;
 										if($question->type_id == 4) {$checkboxes = true;}
-
+										$ans_val = $answer->value + 1;
 							      foreach($answers as $answer){
 
-							        $answer_strings =  $db->query("SELECT * FROM options WHERE question_id = ? AND value_index = ".escapeName($answer->value)."", array($question->id));
+							        $answer_strings =  $db->query("SELECT * FROM options WHERE question_id = ? AND value_index = ".$ans_val."", array($question->id));
 							        $answer_strings = $answer_strings->results();
 
 
