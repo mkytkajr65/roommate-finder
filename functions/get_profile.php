@@ -6,12 +6,9 @@ function getAnswersForProfile($profile_id)
 	$db = DB::getInstance();
 	$tabs = $db->query("SELECT * FROM tabs");
 	$tabs = $tabs->results();
-
 	$currentUsersProfile = false;
-
 	$questions = $db->query("SELECT * FROM questions");
 	$questions = $questions->results();
-
   	$userForProfile = new User($profile_id);
 	$currentUser = new User();
 	if($currentUser->getIsLoggedIn())
@@ -23,22 +20,18 @@ function getAnswersForProfile($profile_id)
 		  $currentUsersProfile = true;
 		}
 	}
-
-
-
 	echo '<div class="row spacing2"><!--Large Widget Starts here-->
 		<div class="col-md-8 largeRankingWidget center-block">
 			<div class="topBannerForWidget">
 				<div class="row">
 				<div class="col-md-10 center-block">
 				<div class="row paddingTop1">
-					<div class="profilePic col-md-3 center-block"></div>
+					<img src="https://my.gcc.edu/icsfileservershare/icsphotos/'.escape($userForProfile->id).'.jpg" class="profilePic col-md-3 center-block"></img>
 				</div>
 				<div class="row spacing1">
 					<div class="col-md-5 col-sm-4 col-xs-6 center-block profileName">
 						<p class="text-center lead"><a class="profileLink" href="profile.php?id='.$profile_id.'">'.escapeName($userForProfile->first_name).' '.escapeName($userForProfile->last_name).'</a></p>
 					</div>
-
 				</div>';
 		
 			echo'<div id="facebookLinkArea" class="row">
@@ -92,32 +85,22 @@ function getAnswersForProfile($profile_id)
 		echo'	</div>
 		</div>
 			</div>';
-
-
-
-
 			$counter = 1;
-
 			echo '<div class="row spacing2">';
 			if(!$currentUsersProfile)
 			{
 				$matchScore = intval(getMatchScore($currentUser->id, $userForProfile->id));
 				echo '<div class="col-md-4';
-
 				$public_answer = $db->query("SELECT * FROM public_answer WHERE user_id = ?", array($userForProfile->id));
-
-
 				if($public_answer->count())
 				{
 					$public_answer = $public_answer->first();
 					$public_answer = $public_answer->value;
-
 					if($public_answer != 1)
 					{
 						echo "center-block";
 					}
 				}
-
 				echo'">
 					<div class="row">
 						<div class="col-md-12">
@@ -131,28 +114,21 @@ function getAnswersForProfile($profile_id)
 					</div>
 				</div>';
 			}
-			$firstsection = true;
-
+			$firstsection = false;
 			$targetUser = $userForProfile;
 			$public_answer = $db->query("SELECT * FROM public_answer WHERE user_id = ?", array($targetUser->id));
-
 			if($public_answer->count())
 			{
 				$public_answer = $public_answer->first();
 				$public_answer = $public_answer->value;
-
 				if($public_answer == 1)
 				{
 	foreach ($tabs as $tab) {
-		if($firstsection != true)
-			{
 			if($counter >= 3){
 				$counter = 0;
 				echo '</div>
 				<div class="row spacing2">';
-
 			}
-
 			echo '<div class="col-md-4">
 				<div class="row">
 					<div class="col-md-12">
@@ -162,31 +138,24 @@ function getAnswersForProfile($profile_id)
 				<div class="row">
 					<div class="col-md-12">
 						<ul class="noPadding">';
-
 			$questions = $db->query("SELECT * FROM questions WHERE tab_id = ?", array($tab->id));
 			$questions = $questions->results();
-
-
-
-
+			echo count($questions);
 	    foreach($questions as $question)
 	    {
+	    				echo "question";
 				      $answers = $db->query("SELECT * FROM answers WHERE question_id = ? AND user_id = ".$profile_id."", array($question->id));
 				      $answers = $answers->results();
-
-
+				      //echo print_r($answers);
 					if($question->type_id != 1 && $question->type_id != 2)
 					{
 						$checkboxes = false;
 						$first_item = true;
 						if($question->type_id == 4) {$checkboxes = true;}
-
+						//print_r($answers);
 			      foreach($answers as $answer){
-
 			        $answer_strings =  $db->query("SELECT * FROM options WHERE question_id = ? AND value_index = ".escapeName($answer->value)."", array($question->id));
 			        $answer_strings = $answer_strings->results();
-
-
 			        foreach($answer_strings as $answer_string)
 			        {
 								if($checkboxes == false) echo '<li>'. escapeName($question->question).' <strong>'.escapeName($answer_string->name).'</strong></li>';
@@ -197,9 +166,7 @@ function getAnswersForProfile($profile_id)
 									echo '<li>'. escapeName($question->question).' <strong> '.escapeName($answer_string->name).'';
 									$first_item = false;
 								}
-
 			        }
-
 			      }
 						if($checkboxes == true) {echo '</strong></li>';}
 					} else
@@ -212,7 +179,6 @@ function getAnswersForProfile($profile_id)
 							} else{
 								echo '<li>'. escapeName($question->question).' <strong>Yes.</strong></li>';
 							}
-
 						}
 					}
 	    }
@@ -221,8 +187,6 @@ function getAnswersForProfile($profile_id)
 						</div>
 					</div>';
 			$counter++;
-		} else $firstsection = false;
-
 		}
 		}
 		else
@@ -237,7 +201,6 @@ function getAnswersForProfile($profile_id)
 	echo '</div>';
 	echo'</ul></div>
 </div><!--Large widget ends here-->';
-
 }
 
 
@@ -266,7 +229,7 @@ function getMatchesForProfile($profile_id)
 				<div class="row">
 				<div class="col-md-10 center-block">
 				<div class="row paddingTop1">
-					<div class="profilePic col-md-3 center-block"></div>
+					<img src="https://my.gcc.edu/icsfileservershare/icsphotos/'.escape($userForProfile->id).'.jpg" class="profilePic col-md-3 center-block"></img>
 				</div>
 				<div class="row spacing1">
 					<div class="col-md-5 col-sm-4 center-block profileName">
@@ -463,7 +426,7 @@ function listBestTenMatches($UserScoreArray)
 						<div class="row">
 						<div class="col-md-10 center-block">
 						<div class="row paddingTop1">
-							<div class="profilePic col-md-3 center-block"></div>
+							<img src="https://my.gcc.edu/icsfileservershare/icsphotos/'.escape($targetUser->id).'.jpg" class="profilePic col-md-3 center-block"></img>
 						</div>
 						<div class="row spacing1">
 							<div class="col-md-5 col-sm-4 col-xs-6 center-block profileName">

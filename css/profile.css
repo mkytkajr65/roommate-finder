@@ -102,12 +102,10 @@
 
 .profilePic
 {
-	height: 3em;
-	width: 3em; 
-	background-image: url("../images/default.jpg");
-	background-size:cover;
-	background-position: 2px;
-	border: 2px solid black;
+	height: 10em;
+	width: 8em;
+	border: 2px solid white;
+	padding: 0;
 }
 
 .topBannerForWidget

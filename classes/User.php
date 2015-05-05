@@ -2,7 +2,7 @@
 class User
 {
 	private $_db, $_data, $_sessionName, $_isLoggedIn, $_cookieName;
-	public $picture, $first_name, $last_name, $email, $account_type, $id, $facebook, $gender, $status;
+	public $first_name, $last_name, $email, $account_type, $id, $facebook, $gender, $status;
 
 	public function __construct($user = null)
 	{
@@ -19,7 +19,6 @@ class User
 				{
 					$this->_isLoggedIn = true;
 					$this->id = $this->data()->id;
-					$this->picture = $this->data()->picture;
 					$this->first_name = $this->data()->first_name;
 					$this->last_name = $this->data()->last_name;
 					$this->email = $this->data()->email;
@@ -68,7 +67,6 @@ class User
 			{
 				$this->_data = $data->first();
 				$this->id = $this->data()->id;
-				$this->picture = $this->data()->picture;
 				$this->first_name = $this->data()->first_name;
 				$this->last_name = $this->data()->last_name;
 				$this->email = $this->data()->email;
