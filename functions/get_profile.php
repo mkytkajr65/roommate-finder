@@ -380,10 +380,14 @@ function getMatches($profile_id)
 	$users = $users->results();
 
 	$userarray = array();
-	foreach($users as $user)
+	foreach($users as $aUser)
 	{
-		$newUser = new UserScore($user->id, getMatchScore($profile_id, $user->id));
-		if($user->id != $profile_id && $user->gender === $profile->gender && $user->status === $profile->status) array_push($userarray, $newUser);
+		$answers = $db->query("SELECT * FROM answers WHERE user_id = ?", array($aUser->id));
+		if ($answers->count()) {
+			$score = getMatchScore($profile_id, $aUser->id);
+			$newUser = new UserScore($aUser->id, $score);
+			if($aUser->id != $profile_id && $aUser->gender === $profile->gender && $aUser->status === $profile->status) array_push($userarray, $newUser);
+		}
 	}
 
 	usort($userarray, "cmp");
@@ -393,9 +397,11 @@ function getMatches($profile_id)
 
 function listBestTenMatches($UserScoreArray)
 {
+	$db = DB::getInstance();
+	if(count($UserScoreArray))
+	{
 	foreach ($UserScoreArray as $num => $userscore)
 	{
-		$db = DB::getInstance();
 		$tabs = $db->query("SELECT * FROM tabs");
 		$tabs = $tabs->results();
 
@@ -417,7 +423,8 @@ function listBestTenMatches($UserScoreArray)
 							</div>
 
 						</div>';
-						if($targetUser->facebook){
+					if($targetUser->facebook)
+					{
 
 		echo			'<div class="row">
 							<div class = "text-center lead">
@@ -463,7 +470,8 @@ function listBestTenMatches($UserScoreArray)
 							</div>
 						</div>
 					</div>';
-					$firstsection = true;
+					$firstsection = false
+					;
 
 			$public_answer = $db->query("SELECT * FROM public_answer WHERE user_id = ?", array($targetUser->id));
 
@@ -576,6 +584,12 @@ function listBestTenMatches($UserScoreArray)
 			break;
 		}
 	}
+	}
+	else
+	{
+		echo "<h1>No Users Found</h1>";
+	}
+	
 }
 
 

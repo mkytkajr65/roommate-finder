@@ -185,7 +185,7 @@ function getTabsWithQuestions()
                     if($selected->count())
                     {
                         $selected = $selected->first();
-                        if($selected->value == $option->value_index-1)echo 'selected';
+                        if($selected->value == $option->value_index)echo 'selected';
                     }
                     echo '>'.escapeName($option->name).'</option>';
                     $valNum++;
@@ -202,7 +202,7 @@ function getTabsWithQuestions()
                 {
                     echo '<input type="checkbox" name="QC_'.$question->id.'" value="'.$valNum.'"';
                     $row = $db->query("SELECT * FROM answers WHERE user_id = ?
-                    AND question_id = ? AND value = ?", array($user->id, $question->id, $option->value_index-1));
+                    AND question_id = ? AND value = ?", array($user->id, $question->id, $option->value_index));
                     if($row->count())echo "checked";
                     echo '> '.escapeName($option->name).'<br>';
                     $valNum++;
