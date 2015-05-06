@@ -5,6 +5,7 @@
 	$answers = Input::get("data");
 	$db = DB::getInstance();
 
+	echo print_r($answers);
 
 	foreach ($answers as $answer)//delete all Checkbox fields
 	{
@@ -16,8 +17,10 @@
 			$row = $db->query("DELETE FROM answers WHERE user_id = ? AND question_id = ?", array($user->id, $qid));
 		}
 	}
+
 	foreach ($answers as $answer)
 	{
+
 		$parsed = parseQuestion($answer["name"]);
 		$questionType = $parsed[0];
 		$qid = $parsed[1];

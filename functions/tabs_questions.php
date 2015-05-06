@@ -176,7 +176,7 @@ function getTabsWithQuestions()
                 $options = $options->results();
                 echo '<div class="form-group">
                         <select class="form-control" name="Q_'.$question->id.'">';
-                $valNum = 0;
+                $valNum = 1;
                 foreach ($options as $option)
                 {
                     echo '<option value="'.$valNum.'"';
@@ -197,7 +197,7 @@ function getTabsWithQuestions()
                 $options = $db->query("SELECT * FROM options WHERE question_id = ?", array($question->id));
                 $options = $options->results();
                 echo '<div class="form-group">';
-                $valNum = 0;
+                $valNum = 1;
                 foreach ($options as  $option)//QC denotes question with checkbox
                 {
                     echo '<input type="checkbox" name="QC_'.$question->id.'" value="'.$valNum.'"';

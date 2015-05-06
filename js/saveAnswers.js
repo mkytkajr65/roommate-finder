@@ -10,10 +10,7 @@ $("#answersSubmitButton").click(function(){
 	$.ajax({
         url: 'ajax/submitStartAnswers.php',
         type: 'POST',
-        data: data,
-        success: function(data){
-        	console.log(data);
-        }
+        data: data
     });
 
 
@@ -26,7 +23,10 @@ $("#answersSubmitButton").click(function(){
 		$.ajax({
         url: 'ajax/submitAnswers.php',
         type: 'POST',
-        data: data
+        data: data,
+        success: function(data){
+        	console.log(data);
+        }
     	});
 	});
 	thisObj.html("Saving");
