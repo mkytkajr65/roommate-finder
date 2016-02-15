@@ -25,7 +25,9 @@ function getRatingString(num)
 }
 
 $(document).ready(function(){
-	$(".sliderValue").text(getRatingString($(".preferenceSlider").val()));//later on we will get the value from the database
+	jQuery('.preferenceSlider').each(function() {
+    	$(this).prev().find(".sliderValue").text(getRatingString($(this).val()));
+	});
 });
 $(".preferenceSlider").change(function(){
 	$(this).prev().find(".sliderValue").text(getRatingString($(this).val()));
